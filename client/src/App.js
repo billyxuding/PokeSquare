@@ -19,22 +19,18 @@ function App() {
 			</h1>
 			<p>What you've got so far:</p>
 			<p>Base: { order.base }</p>
-			<p>
-				Proteins:
-				<ul>
-					{
-						order.proteins.map((item, i) => <li key={i}>{ item }</li>)
-					}
-				</ul>
-			</p>
-			<p>
-				Sauces:
-				<ul>
-					{
-						order.sauces.map((item, i) => <li key={i}>{ item }</li>)
-					}
-				</ul>
-			</p>
+			<p>Proteins:</p>
+			<ul>
+				{
+					order.proteins.map((item, i) => <li key={i}>{ item }</li>)
+				}
+			</ul>
+			<p>Sauces:</p>
+			<ul>
+				{
+					order.sauces.map((item, i) => <li key={i}>{ item }</li>)
+				}
+			</ul>
 			<h2>
 				Base
 				<span className="block subheader2">Choose 1</span>
