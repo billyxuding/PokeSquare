@@ -11,7 +11,7 @@ const Proteins = props => {
         if (e.target.checked) {
             newProteins = [...order.proteins, e.target.name];
         } else {
-            newProteins = order.proteins.filter((item) => item !== e.target.name)
+            newProteins = order.proteins.filter((item) => item !== e.target.name);
         }
         setOrder({
             ...order,
