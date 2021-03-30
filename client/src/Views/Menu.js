@@ -2,6 +2,7 @@ import React from 'react';
 import Bases from '../Components/Bases';
 import Proteins from '../Components/Proteins';
 import Sauces from '../Components/Sauces';
+import Sides from '../Components/Sides';
 
 const Menu = props => {
     const { order, setOrder } = props;
@@ -20,6 +21,8 @@ const Menu = props => {
 			<Proteins order={ order } setOrder={ setOrder } />
 			<h2>Sauces</h2>
 			<Sauces order={ order } setOrder={ setOrder } />
+			<h2>Sides</h2>
+			<Sides order={ order } setOrder={ setOrder } />
         </div>
     )
 };

@@ -6,7 +6,8 @@ function App() {
 	const [order, setOrder] = useState({
 		base: "",
 		proteins: [],
-		sauces: []
+		sauces: [],
+		sides: []
 	});
 
 	return (
