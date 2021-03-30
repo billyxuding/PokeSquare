@@ -34,3 +34,12 @@ h1 {
 .menu {
 	margin-top: 100px;
 }
+
+.checkbox:checked + .label img {
+	border-radius: 50%;
+	border: 10px solid blue;
+}
+
+.checkbox {
+	opacity: 0;
+}

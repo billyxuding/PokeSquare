@@ -28,8 +28,8 @@ const Proteins = props => {
         <div>
             <div className="section">
                 <div>
-                    <input type="checkbox" name="Tuna" id="tuna" onChange={ checkHandler } />
-                    <label htmlFor="tuna">
+                    <input type="checkbox" name="Tuna" className="checkbox" id="tuna" onChange={ checkHandler } />
+                    <label className="label" htmlFor="tuna">
                         <h3>Tuna</h3>
                         <img src={ tuna } alt="tuna" />
                     </label>
