@@ -37,8 +37,8 @@ const Sauces = props => {
 				</label>
 			</div>
             <div>
-				<input type="checkbox" name="Wasabi Aioli" className="checkbox" id="wasabi" onChange={ checkHandler } />
-				<label className="label" htmlFor="wasabi">
+				<input type="checkbox" name="Wasabi Aioli" className="checkbox" id="wasabi-aioli" onChange={ checkHandler } />
+				<label className="label" htmlFor="wasabi-aioli">
 					<h3>Wasabi Aioli</h3>
 					<img src={ wasabiAioli } alt="wasabi aioli sauce" />
 				</label>
