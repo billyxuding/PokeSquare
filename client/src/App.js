@@ -24,6 +24,7 @@ function App() {
 			</ul>
 			<h2>Choose A Base</h2>
 			<Bases order={ order } setOrder={ setOrder } />
+			<h2>Choose Your Proteins</h2>
 			<Proteins order={ order } setOrder={ setOrder } />
 		</div>
 	);

@@ -20,23 +20,28 @@ const Proteins = props => {
     }
 
     return (
-        <div>
-            <h2>Choose Your Proteins</h2>
-            <input type="checkbox" name="tuna" id="tuna" onChange={ checkHandler } />
-            <label htmlFor="tuna">
-                Tuna
-                <img src={ tuna } alt="tuna" />
-            </label>
-            <input type="checkbox" name="salmon" id="salmon" onChange={ checkHandler } />
-            <label htmlFor="salmon">
-                Salmon
-                <img src={ salmon } alt="salmon" />
-            </label>
-            <input type="checkbox" name="shrimp" id="shrimp" onChange={ checkHandler } />
-            <label htmlFor="shrimp">
-                Shrimp
-                <img src={ shrimp } alt="shrimp" />
-            </label>
+        <div className="section">
+            <div>
+                <input type="checkbox" name="tuna" id="tuna" onChange={ checkHandler } />
+                <label htmlFor="tuna">
+                    <h3>Tuna</h3>
+                    <img src={ tuna } alt="tuna" />
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" name="salmon" id="salmon" onChange={ checkHandler } />
+                <label htmlFor="salmon">
+                    <h3>Salmon</h3>
+                    <img src={ salmon } alt="salmon" />
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" name="shrimp" id="shrimp" onChange={ checkHandler } />
+                <label htmlFor="shrimp">
+                    <h3>Shrimp</h3>
+                    <img src={ shrimp } alt="shrimp" />
+                </label>
+            </div>
         </div>
     )
 };
