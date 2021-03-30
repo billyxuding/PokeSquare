@@ -16,9 +16,8 @@ function App() {
 				Create Your Bowl<br />
 				<span className="block made-to-order">Every Bowl Is Made To Order</span>
 			</h1>
-			<p>What you've got so far:</p>
+			<p>What you've got so far:<br />Base: { order.base }</p>
 			<ul>
-				<li>Base: { order.base }</li>
 				<li>Proteins: { order.proteins }</li>
 				<li>Sauces: { order.sauces }</li>
 			</ul>
