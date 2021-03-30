@@ -1,3 +1,17 @@
 .App {
-  text-align: center;
+	text-align: center;
+}
+
+.block {
+	margin: auto;
+	display: block;
+}
+
+h1 {
+	font-size: 36pt;
+}
+
+.made-to-order {
+	margin: 20px;
+	font-size: 14pt;
 }
