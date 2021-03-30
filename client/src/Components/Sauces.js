@@ -23,29 +23,29 @@ const Sauces = props => {
     return (
         <div className="section">
             <div>
-				<input type="checkbox" name="House Poke" id="house-poke" onChange={ checkHandler } />
-				<label htmlFor="house-poke">
+				<input type="checkbox" name="House Poke" className="checkbox" id="house-poke" onChange={ checkHandler } />
+				<label className="label" htmlFor="house-poke">
 					<h3>House Poke</h3>
 					<img src={ housePoke } alt="house poke sauce" />
 				</label>
 			</div>
             <div>
-				<input type="checkbox" name="Sriracha Aioli" id="sriracha" onChange={ checkHandler } />
-				<label htmlFor="sriracha">
+				<input type="checkbox" name="Sriracha Aioli" className="checkbox" id="sriracha" onChange={ checkHandler } />
+				<label className="label" htmlFor="sriracha">
 					<h3>Sriracha Aioli</h3>
 					<img src={ srirachaAioli } alt="sriracha aioli sauce" />
 				</label>
 			</div>
             <div>
-				<input type="checkbox" name="Wasabi Aioli" id="wasabi" onChange={ checkHandler } />
-				<label htmlFor="wasabi">
+				<input type="checkbox" name="Wasabi Aioli" className="checkbox" id="wasabi" onChange={ checkHandler } />
+				<label className="label" htmlFor="wasabi">
 					<h3>Wasabi Aioli</h3>
 					<img src={ wasabiAioli } alt="wasabi aioli sauce" />
 				</label>
 			</div>
             <div>
-				<input type="checkbox" name="Zesty Ponzu" id="zesty-ponzu" onChange={ checkHandler } />
-				<label htmlFor="zesty-ponzu">
+				<input type="checkbox" name="Zesty Ponzu" className="checkbox" id="zesty-ponzu" onChange={ checkHandler } />
+				<label className="label" htmlFor="zesty-ponzu">
 					<h3>Zesty Ponzu</h3>
 					<img src={ zestyPonzu } alt="zesty ponzu sauce" />
 				</label>
