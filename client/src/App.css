@@ -20,9 +20,15 @@ h1 {
 	font-size: 36pt;
 }
 
-.made-to-order {
+.subheader1 {
 	margin: 20px;
 	font-size: 14pt;
+}
+
+.subheader2 {
+	margin: 5px;
+	font-size: 12pt;
+	font-weight: normal;
 }
 
 .menu {
