@@ -16,23 +16,17 @@ const Bases = props => {
     return (
         <div>
 			<h2>Choose A Base</h2>
-			<input
-				type="radio" name="base" value="white rice" id="white-rice"
-				onChange={ selectHandler } />
+			<input type="radio" name="base" value="white rice" id="white-rice" onChange={ selectHandler } />
 			<label htmlFor="white-rice">
-				White Rice
+				<h3>White Rice</h3>
 				<img src={ whiteRice } alt="white rice" />
 			</label>
-			<input
-				type="radio" name="base" value="brown rice" id="brown-rice"
-				onChange={ selectHandler } />
+			<input type="radio" name="base" value="brown rice" id="brown-rice" onChange={ selectHandler } />
 			<label htmlFor="brown-rice">
 				Brown Rice
 				<img src={ brownRice } alt="brown rice" />
 			</label>
-			<input
-				type="radio" name="base" value="salad" id="salad"
-				onChange={ selectHandler } />
+			<input type="radio" name="base" value="salad" id="salad" onChange={ selectHandler } />
 			<label htmlFor="salad">
 				Salad
 				<img src={ salad } alt="salad"/>
