@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import whiteRice from '../Images/bases/white-rice.png';
 import brownRice from '../Images/bases/brown-rice.png';
 import salad from '../Images/bases/salad.png';
 
-const Menu = () => {
-	const [order, setOrder] = useState({
-		base: "",
-		proteins: [],
-		sauces: []
-	});
+const Menu = props => {
+	const { order, setOrder } = props;
 
     return (
         <>
