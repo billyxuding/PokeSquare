@@ -16,11 +16,16 @@ function App() {
 				Create Your Bowl<br />
 				<span className="block made-to-order">Every Bowl Is Made To Order</span>
 			</h1>
-			<p>What you've got so far:<br />Base: { order.base }</p>
-			<ul>
-				<li>Proteins: { order.proteins }</li>
-				<li>Sauces: { order.sauces }</li>
-			</ul>
+			<p>What you've got so far:</p>
+			<p>Base: { order.base }</p>
+			<p>
+				Proteins:
+				<ul>
+					{
+						order.proteins.map((item, i) => <li key={i}>{ item }</li>)
+					}
+				</ul>
+			</p>
 			<h2>Choose A Base</h2>
 			<Bases order={ order } setOrder={ setOrder } />
 			<h2>Choose Your Proteins</h2>
