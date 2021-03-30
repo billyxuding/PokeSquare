@@ -9,7 +9,6 @@ const Menu = () => {
 		proteins: [],
 		sauces: []
 	});
-	const [showLabel, setShowLabel] = useState(false);
 
 	const submitHandler = e => {
 	}
