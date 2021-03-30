@@ -34,3 +34,7 @@ h1 {
 .menu {
 	margin-top: 100px;
 }
+
+input {
+	opacity: 0;
+}
