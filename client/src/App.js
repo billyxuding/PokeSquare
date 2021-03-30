@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Bases from './Components/Bases';
 import Proteins from './Components/Proteins';
+import Sauces from './Components/Sauces';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -26,6 +27,14 @@ function App() {
 					}
 				</ul>
 			</p>
+			<p>
+				Sauces:
+				<ul>
+					{
+						order.sauces.map((item, i) => <li key={i}>{ item }</li>)
+					}
+				</ul>
+			</p>
 			<h2>
 				Base
 				<span className="block subheader2">Choose 1</span>
@@ -37,6 +46,7 @@ function App() {
 			</h2>
 			<Proteins order={ order } setOrder={ setOrder } />
 			<h2>Sauces</h2>
+			<Sauces order={ order } setOrder={ setOrder } />
 		</div>
 	);
 }
