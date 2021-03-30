@@ -2,9 +2,14 @@
 	text-align: center;
 }
 
-div {
+.section {
 	margin-bottom: 100px;
+	display: flex;
+	justify-content: center;
 }
+	.section div {
+		margin: 20px;
+	}
 
 .block {
 	margin: auto;

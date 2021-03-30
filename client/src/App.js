@@ -22,6 +22,7 @@ function App() {
 				<li>Proteins: { order.proteins }</li>
 				<li>Sauces: { order.sauces }</li>
 			</ul>
+			<h2>Choose A Base</h2>
 			<Bases order={ order } setOrder={ setOrder } />
 			<Proteins order={ order } setOrder={ setOrder } />
 		</div>

@@ -14,23 +14,28 @@ const Bases = props => {
 	}
 
     return (
-        <div>
-			<h2>Choose A Base</h2>
-			<input type="radio" name="base" value="white rice" id="white-rice" onChange={ selectHandler } />
-			<label htmlFor="white-rice">
-				<h3>White Rice</h3>
-				<img src={ whiteRice } alt="white rice" />
-			</label>
-			<input type="radio" name="base" value="brown rice" id="brown-rice" onChange={ selectHandler } />
-			<label htmlFor="brown-rice">
-				Brown Rice
-				<img src={ brownRice } alt="brown rice" />
-			</label>
-			<input type="radio" name="base" value="salad" id="salad" onChange={ selectHandler } />
-			<label htmlFor="salad">
-				Salad
-				<img src={ salad } alt="salad"/>
-			</label>
+        <div className="section">
+			<div>
+				<input type="radio" name="base" value="white rice" id="white-rice" onChange={ selectHandler } />
+				<label htmlFor="white-rice">
+					<h3>White Rice</h3>
+					<img src={ whiteRice } alt="white rice" />
+				</label>
+			</div>
+			<div>
+				<input type="radio" name="base" value="brown rice" id="brown-rice" onChange={ selectHandler } />
+				<label htmlFor="brown-rice">
+					<h3>Brown Rice</h3>
+					<img src={ brownRice } alt="brown rice" />
+				</label>
+			</div>
+			<div>
+				<input type="radio" name="base" value="salad" id="salad" onChange={ selectHandler } />
+				<label htmlFor="salad">
+					<h3>Salad</h3>
+					<img src={ salad } alt="salad"/>
+				</label>
+			</div>
         </div>
     )
 };
