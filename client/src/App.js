@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Bases from './Components/Bases';
+import Proteins from './Components/Proteins';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -22,6 +23,7 @@ function App() {
 				<li>Sauces: { order.sauces }</li>
 			</ul>
 			<Bases order={ order } setOrder={ setOrder } />
+			<Proteins />
 		</div>
 	);
 }
