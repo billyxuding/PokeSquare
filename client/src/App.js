@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Menu from './Components/Menu';
-import React from 'react';
+import Bases from './Components/Bases';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -16,7 +15,13 @@ function App() {
 				Create Your Bowl<br />
 				<span className="block made-to-order">Every Bowl Is Made To Order</span>
 			</h1>
-			<Menu order={ order } setOrder={ setOrder } />
+			<p>What you've got so far:</p>
+			<ul>
+				<li>Base: { order.base }</li>
+				<li>Proteins: { order.proteins }</li>
+				<li>Sauces: { order.sauces }</li>
+			</ul>
+			<Bases order={ order } setOrder={ setOrder } />
 		</div>
 	);
 }
