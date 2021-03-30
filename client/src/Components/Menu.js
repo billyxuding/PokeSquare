@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import whiteRice from '../Images/bases/white-rice.png'
+import whiteRice from '../Images/bases/white-rice.png';
+import brownRice from '../Images/bases/brown-rice.png';
+import salad from '../Images/bases/salad.png';
 
 const Menu = () => {
 	const [bowl, setBowl] = useState({
@@ -7,6 +9,7 @@ const Menu = () => {
 		proteins: [],
 		sauces: []
 	});
+	const [showLabel, setShowLabel] = useState(false);
 
 	const submitHandler = e => {
 	}
@@ -20,12 +23,27 @@ const Menu = () => {
 			</ul>
 			<form className="menu" onSubmit={ submitHandler }>
 				<h2>Choose A Base</h2>
-				<input type="radio" name="base" value="white rice" id="white-rice" onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
-				<label htmlFor="white-rice">White Rice <img src={ whiteRice } alt="white rice"/></label>
-				<input type="radio" name="base" value="brown rice" id="brown-rice" onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
-				<label htmlFor="brown-rice">Brown Rice</label>
-				<input type="radio" name="base" value="salad" id="salad" onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
-				<label htmlFor="salad">Salad</label>
+				<input
+					type="radio" name="base" value="white rice" id="white-rice"
+					onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
+				<label htmlFor="white-rice">
+					White Rice
+					<img src={ whiteRice } alt="white rice" />
+				</label>
+				<input
+					type="radio" name="base" value="brown rice" id="brown-rice"
+					onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
+				<label htmlFor="brown-rice">
+					Brown Rice
+					<img src={ brownRice } alt="brown rice" />
+				</label>
+				<input
+					type="radio" name="base" value="salad" id="salad"
+					onChange={ e => setBowl({ ...bowl, [e.target.name]: e.target.value })} />
+				<label htmlFor="salad">
+					Salad
+					<img src={ salad } alt="salad"/>
+				</label>
 			</form>
         </>
     )
