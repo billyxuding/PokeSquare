@@ -37,7 +37,7 @@ h1 {
 
 .checkbox:checked + .label img {
 	border-radius: 50%;
-	border: 10px solid rgb(66, 166, 206);
+	border: 8px solid rgb(66, 166, 206);
 }
 
 .checkbox {
