@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
+import tuna from '../Images/proteins/tuna.png';
+import salmon from '../Images/proteins/salmon.png';
+import shrimp from '../Images/proteins/shrimp.png';
 
 const Proteins = props => {
     const { order, setOrder } = props;
-    let counter = 0; // cannot be more than 3
-
-    const checkHandler = e => {
-        
-    }
+    const [addTuna, setAddTuna] = useState(false);
+    const [addSalmon, setAddSalmon] = useState(false);
+    const [addShrimp, setAddShrimp] = useState(false);
 
     return (
         <div>
             <h2>Choose Your Proteins</h2>
-            <label htmlFor="tuna">Tuna</label>
-            <input type="checkbox" id="tuna" checked={ false } onChange={ checkHandler } />
+            <input
+                type="checkbox" id="tuna" checked={ addTuna }
+                onChange={ e => {
+                    setAddTuna(e.target.checked);
+                    if (e.target.checked) {
+                        setOrder({
+                            ...order,
+                            proteins: [...order.proteins, "tuna"]
+                        });
+                    }
+                }} />
+            <label htmlFor="tuna">
+                Tuna
+                <img src={ tuna } alt="tuna" />
+            </label>
+            <input
+                type="checkbox" id="salmon" checked={ addSalmon }
+                onChange={ e => {
+                    setAddSalmon(e.target.checked);
+                    if (e.target.checked) {
+                        setOrder({
+                            ...order,
+                            proteins: [...order.proteins, "salmon"]
+                        });
+                    }
+                }} />
+            <label htmlFor="salmon">
+                Salmon
+                <img src={ salmon } alt="salmon" />
+            </label>
+            <input
+                type="checkbox" id="shrimp" checked={ addShrimp }
+                onChange={ e => {
+                    setAddShrimp(e.target.checked);
+                    if (e.target.checked) {
+                        setOrder({
+                            ...order,
+                            proteins: [...order.proteins, "shrimp"]
+                        });
+                    }
+                }} />
+            <label htmlFor="shrimp">
+                Shrimp
+                <img src={ shrimp } alt="shrimp" />
+            </label>
         </div>
     )
 };
