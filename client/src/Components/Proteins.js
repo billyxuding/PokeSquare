@@ -35,22 +35,22 @@ const Proteins = props => {
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Salmon" id="salmon" onChange={ checkHandler } />
-                    <label htmlFor="salmon">
+                    <input type="checkbox" name="Salmon" className="checkbox" id="salmon" onChange={ checkHandler } />
+                    <label className="label" htmlFor="salmon">
                         <h3>Salmon</h3>
                         <img src={ salmon } alt="salmon" />
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Shrimp" id="shrimp" onChange={ checkHandler } />
-                    <label htmlFor="shrimp">
+                    <input type="checkbox" name="Shrimp" className="checkbox" id="shrimp" onChange={ checkHandler } />
+                    <label className="label" htmlFor="shrimp">
                         <h3>Shrimp</h3>
                         <img src={ shrimp } alt="shrimp" />
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Albacore" id="albacore" onChange={ checkHandler } />
-                    <label htmlFor="albacore">
+                    <input type="checkbox" name="Albacore" className="checkbox" id="albacore" onChange={ checkHandler } />
+                    <label className="label" htmlFor="albacore">
                         <h3>Albacore</h3>
                         <img src={ albacore } alt="albacore" />
                     </label>
@@ -58,29 +58,29 @@ const Proteins = props => {
             </div>
             <div className="section">
                 <div>
-                    <input type="checkbox" name="Tako" id="tako" onChange={ checkHandler } />
-                    <label htmlFor="tako">
+                    <input type="checkbox" name="Tako" className="checkbox" id="tako" onChange={ checkHandler } />
+                    <label className="label" htmlFor="tako">
                         <h3>Tako</h3>
                         <img src={ tako } alt="tako" />
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Spicy Tuna" id="spicy-tuna" onChange={ checkHandler } />
-                    <label htmlFor="spicy-tuna">
+                    <input type="checkbox" name="Spicy Tuna" className="checkbox" id="spicy-tuna" onChange={ checkHandler } />
+                    <label className="label" htmlFor="spicy-tuna">
                         <h3>Spicy Tuna</h3>
                         <img src={ spicyTuna } alt="spicy-tuna" />
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Scallops" id="scallops" onChange={ checkHandler } />
-                    <label htmlFor="scallops">
+                    <input type="checkbox" name="Scallops" className="checkbox" id="scallops" onChange={ checkHandler } />
+                    <label className="label" htmlFor="scallops">
                         <h3>Scallops</h3>
                         <img src={ scallops } alt="scallops" />
                     </label>
                 </div>
                 <div>
-                    <input type="checkbox" name="Tofu" id="tofu" onChange={ checkHandler } />
-                    <label htmlFor="tofu">
+                    <input type="checkbox" name="Tofu" className="checkbox" id="tofu" onChange={ checkHandler } />
+                    <label className="label" htmlFor="tofu">
                         <h3>Tofu</h3>
                         <img src={ tofu } alt="tofu" />
                     </label>
