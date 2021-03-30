@@ -23,7 +23,7 @@ function App() {
 				<li>Sauces: { order.sauces }</li>
 			</ul>
 			<Bases order={ order } setOrder={ setOrder } />
-			<Proteins />
+			<Proteins order={ order } setOrder={ setOrder } />
 		</div>
 	);
 }
