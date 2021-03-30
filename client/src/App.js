@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Bases from './Components/Bases';
-import Proteins from './Components/Proteins';
-import Sauces from './Components/Sauces';
+import Menu from './Views/Menu';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -31,18 +29,7 @@ function App() {
 					order.sauces.map((item, i) => <li key={i}>{ item }</li>)
 				}
 			</ul>
-			<h2>
-				Base
-				<span className="block subheader2">Choose 1</span>
-			</h2>
-			<Bases order={ order } setOrder={ setOrder } />
-			<h2>
-				Proteins
-				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
-			</h2>
-			<Proteins order={ order } setOrder={ setOrder } />
-			<h2>Sauces</h2>
-			<Sauces order={ order } setOrder={ setOrder } />
+			<Menu order={ order } setOrder={ setOrder } />
 		</div>
 	);
 }
