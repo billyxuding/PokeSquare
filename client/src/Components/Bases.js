@@ -32,7 +32,7 @@ const Bases = props => {
 			<div>
 				<input type="radio" name="base" value="salad" id="salad" onChange={ selectHandler } />
 				<label htmlFor="salad">
-					<h3>Salad</h3>
+					<h3>Spring Mix Salad</h3>
 					<img src={ salad } alt="salad"/>
 				</label>
 			</div>
