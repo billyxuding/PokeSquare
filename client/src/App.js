@@ -12,7 +12,7 @@ function App() {
 	});
 
 	return (
-		<div className="App">
+		<>
 			<h1>
 				Create Your Bowl<br />
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
@@ -32,7 +32,7 @@ function App() {
 				}
 			</ul>
 			<Menu order={ order } setOrder={ setOrder } />
-		</div>
+		</>
 	);
 }
 
