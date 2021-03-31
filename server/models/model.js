@@ -17,7 +17,7 @@ const OrderSchema = new mongoose.Schema({
         minlength: [5, "email must be at least 5 characters long"]
     },
     base: {
-        type: [String]
+        type: String
     },
     proteins: {
         type: [String]

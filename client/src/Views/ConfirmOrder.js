@@ -14,7 +14,9 @@ const ConfirmOrder = props => {
 
 	const submitHandler = e => {
 		e.preventDefault();
-		// send post request with order object
+		axios.post("http://localhost:8000/api/new", order)
+			.then(res => console.log("response:", res.data))
+			.catch(err => console.log("error:", err))
 		navigate("/success");
 	};
 
