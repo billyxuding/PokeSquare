@@ -15,7 +15,7 @@ const ConfirmOrder = props => {
 	const submitHandler = e => {
 		e.preventDefault();
 		// send post request with order object
-		// navigate to succes page
+		navigate("/success");
 	};
 
     return (
