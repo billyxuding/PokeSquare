@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import Bases from '../Components/Bases';
 import Category from '../Components/Category';
 
 // images
@@ -67,8 +66,9 @@ const Menu = props => {
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
 			</h1>
             <h2>Base Refactored</h2>
-			<Bases
-				options={[
+			<Category
+				type={ "radio" }
+				options={ [
 					{
 						name: "White Rice",
 						id: "white-rice",
@@ -87,7 +87,7 @@ const Menu = props => {
 						checked: order.base === "Spring Mix Salad",
 						src: salad
 					},
-				]}
+				] }
 				checkHandler={ baseHandler }
 			/>
 			<h2>
@@ -95,7 +95,8 @@ const Menu = props => {
 				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
 			</h2>
 			<Category
-				options={[
+				type={ "checkbox" }
+				options={ [
 					{
 						name: "Tuna",
 						id: "tuna",
@@ -144,12 +145,13 @@ const Menu = props => {
 						checked: order.proteins.includes("Tofu"),
 						src: tofu
 					}
-				]}
+				] }
 				checkHandler={ e => checkHandler(e, "proteins")}
 			/>
 			<h2>Sauces Refactored</h2>
 			<Category
-				options={[
+				type={ "checkbox" }
+				options={ [
 					{
 						name: "House Poke",
 						id: "house-poke",
@@ -174,12 +176,13 @@ const Menu = props => {
 						checked: order.sauces.includes("Zesty Ponzu"),
 						src: zestyPonzu
 					}
-				]}
+				] }
 				checkHandler={ e => checkHandler(e, "sauces") }
 			/>
 			<h2>Sides Refactored</h2>
 			<Category
-				options={[
+				type={ "checkbox" }
+				options={ [
 					{
 						name: "Crab Salad",
 						id: "crab-salad",
@@ -222,12 +225,13 @@ const Menu = props => {
 						checked: order.sides.includes("Wasabi"),
 						src: wasabi
 					}
-				]}
+				] }
 				checkHandler={ e => checkHandler(e, "sides") }
 			/>
 			<h2>Toppings Refactored</h2>
 			<Category
-				options={[
+				type={ "checkbox" }
+				options={ [
 					{
 						name: "Corn",
 						id: "corn",
@@ -282,7 +286,7 @@ const Menu = props => {
 						checked: order.toppings.includes("Sesame Seeds"),
 						src: sesameSeeds
 					}
-				]}
+				] }
 				checkHandler={ e => checkHandler(e, "toppings") }
 			/>
 			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>

@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Category = props => {
-	const { options, checkHandler } = props;
+	const { type, options, checkHandler } = props;
 
     return (
         <div className="category">
 			{
 				options.map((item, i) =>
 					<div key={i} className="option">
-						<input type="checkbox" name={ item.name } className="checkbox" id={ item.id } checked={ item.checked } onChange={ checkHandler } />
+						<input type={ type } name={ item.name } className="checkbox" id={ item.id } checked={ item.checked } onChange={ checkHandler } />
 						<label className="label" htmlFor={ item.id }>
 							<h3>{ item.name }</h3>
 							<img src={ item.src } alt={ item.name } />
