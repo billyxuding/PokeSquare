@@ -81,7 +81,7 @@ const ConfirmOrder = props => {
 			</div>
 			<Link to="/order"><button className="edit-order">Edit Order</button></Link>
 			<span className="block">Special Requests:</span>
-			<textarea cols="30" rows="5" onChange={ e => setOrder({ ...order, requests: e.target.value }) }></textarea>
+			<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
             <div className="cust-info">
                 <label htmlFor="fname">First Name:</label>
                 <input type="text" name="fname" onChange={ changeHandler } />
