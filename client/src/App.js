@@ -10,14 +10,16 @@ function App() {
 		proteins: [],
 		sauces: [],
 		sides: [],
-		toppings: []
+		toppings: [],
+		fname: "",
+		lname: ""
 	});
 
 	return (
 		<>
 			<Router>
 				<Menu path="/order" order={ order } setOrder={ setOrder } />
-				<CustomerInfo path="/order/confirm" />
+				<CustomerInfo path="/order/confirm" order={ order } setOrder={ setOrder } />
 			</Router>
 		</>
 	);
