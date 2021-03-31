@@ -81,6 +81,10 @@
 	justify-content: space-between;
 }
 
+.order-sum ul {
+	text-align: right;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
