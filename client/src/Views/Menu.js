@@ -23,6 +23,7 @@ const Menu = props => {
 			<Sauces order={ order } setOrder={ setOrder } />
 			<h2>Sides</h2>
 			<Sides order={ order } setOrder={ setOrder } />
+			<h2>Toppings</h2>
         </div>
     )
 };
