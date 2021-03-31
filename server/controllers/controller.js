@@ -1,18 +1,18 @@
-const Something = require("../models/model");
+const Order = require("../models/model");
 
 module.exports = {
     // Create
-    // addSomething: (req, res) => {
-    //     Something.create(req.body)
-    //         .then(data => res.json({ message: "success", results: data }))
-    //         .catch(err => res.json({ message: "error", errors: err.errors }));
-    // },
+    newOrder: (req, res) => {
+        Order.create(req.body)
+            .then(data => res.json({ message: "success", results: data }))
+            .catch(err => res.json({ message: "error", errors: err.errors }));
+    },
     // Read
-    // getAllSomethings: (req, res) => {
-    //     Something.find()
-    //         .then(data => res.json({ message: "success", results: data }))
-    //         .catch(err => res.json({ message: "error", errors: err.errors }));
-    // },
+    getAllOrders: (req, res) => {
+        Order.find()
+            .then(data => res.json({ message: "success", results: data }))
+            .catch(err => res.json({ message: "error", errors: err.errors }));
+    }
     // getOneSomethings: (req, res) => {
     //     Something.findById(req.params.id)
     //         .then(data => res.json({ message: "success", results: data }))

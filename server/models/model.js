@@ -1,23 +1,41 @@
 const mongoose = require("mongoose");
 
-const SomethingSchema = new mongoose.Schema({
-    name: {
+const OrderSchema = new mongoose.Schema({
+    fname: {
         type: String,
-        required: [true, "name is required"],
-        minlength: [3, "name must be at least 3 characters long"]
+        required: [true, "first name is required"],
+        minlength: [2, "first name must be at least 2 characters long"]
     },
-    type: {
+    lname: {
         type: String,
-        required: [true, "type is required"],
-        minlength: [3, "type must be at least 3 characters long"]
+        required: [true, "last name is required"],
+        minlength: [2, "last name must be at least 2 characters long"]
     },
-    description: {
+    email: {
         type: String,
-        required: [true, "description is required"],
-        minlength: [3, "description must be at least 3 characters long"]
+        required: [true, "email is required"],
+        minlength: [5, "email must be at least 5 characters long"]
+    },
+    base: {
+        type: [String]
+    },
+    proteins: {
+        type: [String]
+    },
+    sauces: {
+        type: [String]
+    },
+    sides: {
+        type: [String]
+    },
+    toppings: {
+        type: [String]
+    },
+    requests: {
+        type: String
     }
 }, { timestamps: true });
 
-const Something = mongoose.model("something", SomethingSchema);
+const Order = mongoose.model("order", OrderSchema);
 
-module.exports = Something;
+module.exports = Order;
