@@ -43,7 +43,7 @@ const Menu = props => {
 	const baseHandler = e => {
 		setOrder({
 			...order,
-			[e.target.name]: e.target.value
+			base: e.target.name
 		})
 	}
 
@@ -70,19 +70,19 @@ const Menu = props => {
 			<Bases
 				options={[
 					{
-						value: "White Rice",
+						name: "White Rice",
 						id: "white-rice",
 						checked: order.base === "White Rice",
 						src: whiteRice
 					},
 					{
-						value: "Brown Rice",
+						name: "Brown Rice",
 						id: "brown-rice",
 						checked: order.base === "Brown Rice",
 						src: brownRice
 					},
 					{
-						value: "Spring Mix Salad",
+						name: "Spring Mix Salad",
 						id: "salad",
 						checked: order.base === "Spring Mix Salad",
 						src: salad

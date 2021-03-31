@@ -8,10 +8,10 @@ const Bases = props => {
 			{
 				options.map((item, i) =>
 					<div key={i} className="option">
-						<input type="radio" name="base" value={ item.value } className="checkbox" id={ item.id } checked={ item.checked } onChange={ checkHandler } />
+						<input type="radio" name={ item.name } className="checkbox" id={ item.id } checked={ item.checked } onChange={ checkHandler } />
 						<label className="label" htmlFor={ item.id }>
-							<h3>{ item.value }</h3>
-							<img src={ item.src } alt={ item.value } />
+							<h3>{ item.name }</h3>
+							<img src={ item.src } alt={ item.name } />
 						</label>
 					</div>
 				)
