@@ -14,7 +14,7 @@ const Bases = props => {
 	}
 
     return (
-        <div className="section">
+        <div className="ingredients">
 			<div>
 				<input type="radio" name="base" value="White Rice" className="checkbox" id="white-rice" onChange={ selectHandler } />
 				<label className="label" htmlFor="white-rice">

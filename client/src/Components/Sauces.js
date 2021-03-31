@@ -21,7 +21,7 @@ const Sauces = props => {
 	}
 
     return (
-        <div className="section">
+        <div className="ingredients">
             <div>
 				<input type="checkbox" name="House Poke" className="checkbox" id="house-poke" onChange={ checkHandler } />
 				<label className="label" htmlFor="house-poke">

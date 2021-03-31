@@ -24,7 +24,7 @@ const Sides = props => {
     }
 
     return (
-        <div className="section">
+        <div className="ingredients">
             <div>
                 <input type="checkbox" name="Crab Salad" className="checkbox" id="crab-salad" onChange={ checkHandler } />
                 <label className="label" htmlFor="crab-salad">

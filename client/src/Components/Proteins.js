@@ -25,7 +25,7 @@ const Proteins = props => {
     }
 
     return (
-        <div className="section">
+        <div className="ingredients">
             <div>
                 <input type="checkbox" name="Tuna" className="checkbox" id="tuna" onChange={ checkHandler } />
                 <label className="label" htmlFor="tuna">

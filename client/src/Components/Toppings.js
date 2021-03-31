@@ -26,7 +26,7 @@ const Toppings = props => {
     }
 
     return (
-        <div>
+        <div className="ingredients">
             <div>
                 <input type="checkbox" name="Corn" className="checkbox" id="corn" onChange={ checkHandler } />
                 <label className="label" htmlFor="corn">
