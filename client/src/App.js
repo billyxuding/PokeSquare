@@ -7,7 +7,8 @@ function App() {
 		base: "",
 		proteins: [],
 		sauces: [],
-		sides: []
+		sides: [],
+		toppings: []
 	});
 
 	return (
