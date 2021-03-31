@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Category = props => {
-	const { sides, checkHandler } = props;
+	const { ingredients, checkHandler } = props;
 
     return (
         <div className="ingredients">
 			{
-				sides.map((item, i) =>
+				ingredients.map((item, i) =>
 					<div key={i}>
 						<input type="checkbox" name={ item.name } className="checkbox" id={ item.id } checked={ item.checked } onChange={ checkHandler } />
 						<label className="label" htmlFor={ item.id }>

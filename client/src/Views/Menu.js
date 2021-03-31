@@ -6,6 +6,10 @@ import Sauces from '../Components/Sauces';
 import Sides from '../Components/Sides';
 import Category from '../Components/Category';
 import Toppings from '../Components/Toppings';
+import housePoke from '../Images/sauces/house-poke.png';
+import srirachaAioli from '../Images/sauces/sriracha-aioli.png';
+import wasabiAioli from '../Images/sauces/wasabi-aioli.png';
+import zestyPonzu from '../Images/sauces/zesty-ponzu.png';
 import crabSalad from '../Images/sides/crab-salad.png';
 import seaweedSalad from '../Images/sides/seaweed-salad.png';
 import avocado from '../Images/sides/avocado.png';
@@ -18,18 +22,18 @@ import logo from '../Images/logo.png';
 const Menu = props => {
     const { order, setOrder } = props;
 
-	const sidesHandler = e => {
-        let newArray;
+	const checkHandler = (e, type) => {
+		let newSauces;
         if (e.target.checked) {
-            newArray = [...order.sides, e.target.name];
+            newSauces = [...order[type], e.target.name];
         } else {
-            newArray = order.sides.filter((item) => item !== e.target.name);
+            newSauces = order[type].filter((item) => item !== e.target.name);
         }
         setOrder({
             ...order,
-            sides: newArray
+            [type]: newSauces
         });
-    }
+	}
 
     return (
         <div>
@@ -46,9 +50,38 @@ const Menu = props => {
 			<Proteins order={ order } setOrder={ setOrder } />
 			<h2>Sauces Refactored</h2>
 			{/* <Sauces order={ order } setOrder={ setOrder } /> */}
+			<Category
+				ingredients={[
+					{
+						name: "House Poke",
+						id: "house-poke",
+						checked: order.sauces.includes("House Poke"),
+						src: housePoke
+					},
+					{
+						name: "Sriracha Aioli",
+						id: "sriracha",
+						checked: order.sauces.includes("Sriracha Aioli"),
+						src: srirachaAioli
+					},
+					{
+						name: "Wasabi Aioli",
+						id: "wasabi-aioli",
+						checked: order.sauces.includes("Wasabi Aioli"),
+						src: wasabiAioli
+					},
+					{
+						name: "Zesty Ponzu",
+						id: "zesty-ponzu",
+						checked: order.sauces.includes("Zesty Ponzu"),
+						src: zestyPonzu
+					}
+				]}
+				checkHandler={ e => checkHandler(e, "sauces") }
+			/>
 			<h2>Sides Refactored</h2>
 			<Category
-				sides={[
+				ingredients={[
 					{
 						name: "Crab Salad",
 						id: "crab-salad",
@@ -92,7 +125,7 @@ const Menu = props => {
 						src: wasabi
 					}
 				]}
-				checkHandler={ sidesHandler }
+				checkHandler={ e => checkHandler(e, "sides") }
 			/>
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
