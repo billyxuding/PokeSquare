@@ -35,7 +35,7 @@ const Admin = () => {
                 </thead>
                 <tbody>
                 {
-                    orderList.map((order, i) =>
+                    orderList.slice(0).reverse().map((order, i) =>
                         <tr key={i}>
                             <td>{ order.fname }</td>
                             <td>{ order.lname }</td>
