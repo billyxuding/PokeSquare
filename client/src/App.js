@@ -11,6 +11,7 @@ function App() {
 		sauces: [],
 		sides: [],
 		toppings: [],
+		specialRequests: "",
 		fname: "",
 		lname: ""
 	});
