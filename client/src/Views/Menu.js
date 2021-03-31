@@ -4,9 +4,16 @@ import Bases from '../Components/Bases';
 import Proteins from '../Components/Proteins';
 import Sauces from '../Components/Sauces';
 import Sides from '../Components/Sides';
-import Toppings from '../Components/Toppings';
-import logo from '../Images/logo.png';
 import Category from '../Components/Category';
+import Toppings from '../Components/Toppings';
+import crabSalad from '../Images/sides/crab-salad.png';
+import seaweedSalad from '../Images/sides/seaweed-salad.png';
+import avocado from '../Images/sides/avocado.png';
+import cucumber from '../Images/sides/cucumber.png';
+import onions from '../Images/sides/onions.png';
+import pickledGinger from '../Images/sides/pickled-ginger.png';
+import wasabi from '../Images/sides/wasabi.png';
+import logo from '../Images/logo.png';
 
 const Menu = props => {
     const { order, setOrder } = props;
@@ -29,7 +36,13 @@ const Menu = props => {
 			<h2>Sides</h2>
 			<Sides order={ order } setOrder={ setOrder } />
 			<h2>Sides Refactored</h2>
-			<Category order={ order } setOrder={ setOrder} />
+			<Category
+				order={ order }
+				setOrder={ setOrder}
+				name="Crab Salad"
+				id="crab-salad"
+				src={ crabSalad }
+			/>
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
 			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>

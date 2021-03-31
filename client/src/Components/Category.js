@@ -1,29 +1,29 @@
 import React from 'react';
-import crabSalad from '../Images/sides/crab-salad.png';
 
 const Category = props => {
-	const { order, setOrder } = props;
+	const { order, setOrder, name, id, src } = props;
 
 	const checkHandler = e => {
-        let newSides;
+        let newArray;
         if (e.target.checked) {
-            newSides = [...order.sides, e.target.name];
+            newArray = [...order.sides, e.target.name];
         } else {
-            newSides = order.sides.filter((item) => item !== e.target.name);
+            newArray = order.sides.filter((item) => item !== e.target.name);
         }
         setOrder({
             ...order,
-            sides: newSides
+            sides: newArray
         });
     }
 
     return (
         <div className="ingredients">
+			{/* map the passed in array of objects */}
             <div>
-                <input type="checkbox" name="Crab Salad" className="checkbox" id="crab-salad" onChange={ checkHandler } />
-                <label className="label" htmlFor="crab-salad">
-                    <h3>Crab Salad</h3>
-                    <img src={ crabSalad } alt="crab salad" />
+                <input type="checkbox" name={ name } className="checkbox" id={ id } onChange={ checkHandler } />
+                <label className="label" htmlFor={ id }>
+                    <h3>{ name }</h3>
+                    <img src={ src } alt={ name } />
                 </label>
             </div>
         </div>
