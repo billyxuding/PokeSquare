@@ -77,7 +77,7 @@
 	margin-right: auto;
 	width: 300px;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 }
 
