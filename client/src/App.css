@@ -44,3 +44,9 @@ h1 {
 .checkbox {
 	display: none;
 }
+
+.checkout {
+	margin: 50px;
+	width: 200px;
+	height: 80px;
+}

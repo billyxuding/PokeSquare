@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import Bases from '../Components/Bases';
 import Proteins from '../Components/Proteins';
 import Sauces from '../Components/Sauces';
@@ -27,6 +28,7 @@ const Menu = props => {
 			<Sides order={ order } setOrder={ setOrder } />
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
+			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>
         </div>
     )
 };
