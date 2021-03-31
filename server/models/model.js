@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const arrayLimit = val => val.length <= 3;
+
 const OrderSchema = new mongoose.Schema({
     fname: {
         type: String,
@@ -20,7 +22,8 @@ const OrderSchema = new mongoose.Schema({
         type: String
     },
     proteins: {
-        type: [String]
+        type: [String],
+        validate: [arrayLimit, "please choose between 2-3 proteins"]
     },
     sauces: {
         type: [String]
