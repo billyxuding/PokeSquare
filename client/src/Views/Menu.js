@@ -5,6 +5,7 @@ import Proteins from '../Components/Proteins';
 import Sauces from '../Components/Sauces';
 import Sides from '../Components/Sides';
 import Toppings from '../Components/Toppings';
+import logo from '../Images/logo.png';
 
 const Menu = props => {
     const { order, setOrder } = props;
@@ -29,6 +30,7 @@ const Menu = props => {
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
 			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>
+			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </div>
     )
 };
