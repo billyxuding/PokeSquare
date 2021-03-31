@@ -102,7 +102,3 @@ table {
 	border-radius: 15px;
 	border-spacing: 0;
 }
-
-tr:nth-child(even) {
-	background-color: rgb(230, 230, 230);
-}
