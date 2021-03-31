@@ -71,8 +71,8 @@ const Admin = () => {
                             <td>
 								<ul>
 									{
-										order.proteins.map((protein, i) =>
-											<li key={i}>{ protein }</li>
+										order.toppings.map((topping, i) =>
+											<li key={i}>{ topping }</li>
 										)
 									}
 								</ul>
