@@ -3,6 +3,7 @@ import { Router } from '@reach/router';
 import './App.css';
 import Menu from './Views/Menu';
 import ConfirmOrder from './Views/ConfirmOrder';
+import Success from './Views/Success';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -22,6 +23,7 @@ function App() {
 			<Router>
 				<Menu path="/order" order={ order } setOrder={ setOrder } />
 				<ConfirmOrder path="/order/confirm" order={ order } setOrder={ setOrder } />
+				<Success path="/success" />
 			</Router>
 		</>
 	);

@@ -88,6 +88,10 @@ const ConfirmOrder = props => {
 				<label htmlFor="lname">Last Name:</label>
 				<input type="text" name="lname" onChange={ changeHandler } />
 			</div>
+			<div className="cust-info">
+				<label htmlFor="email">Email:</label>
+				<input type="text" name="email" onChange={ changeHandler } />
+			</div>
 			<button className="place-order" onClick={ submitHandler }>Place Order</button>
         </>
     )
