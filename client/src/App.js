@@ -6,14 +6,14 @@ import CustomerInfo from './Views/CustomerInfo';
 
 function App() {
 	const [order, setOrder] = useState({
+		fname: "",
+		lname: "",
 		base: "",
 		proteins: [],
 		sauces: [],
 		sides: [],
 		toppings: [],
-		requests: "",
-		fname: "",
-		lname: ""
+		requests: ""
 	});
 
 	return (
