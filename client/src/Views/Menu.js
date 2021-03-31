@@ -44,50 +44,55 @@ const Menu = props => {
 				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
 			</h2>
 			<Proteins order={ order } setOrder={ setOrder } />
-			<h2>Sauces</h2>
-			<Sauces order={ order } setOrder={ setOrder } />
-			{/* <h2>Sides</h2>
-			<Sides order={ order } setOrder={ setOrder } /> */}
+			<h2>Sauces Refactored</h2>
+			{/* <Sauces order={ order } setOrder={ setOrder } /> */}
 			<h2>Sides Refactored</h2>
 			<Category
-				checkHandler={ sidesHandler }
 				sides={[
 					{
 						name: "Crab Salad",
 						id: "crab-salad",
+						checked: order.sides.includes("Crab Salad"),
 						src: crabSalad
 					},
 					{
 						name: "Seaweed Salad",
 						id: "seaweed-salad",
+						checked: order.sides.includes("Seaweed Salad"),
 						src: seaweedSalad
 					},
 					{
 						name: "Avocado",
 						id: "avocado",
+						checked: order.sides.includes("Avocado"),
 						src: avocado
 					},
 					{
 						name: "Cucumber",
 						id: "cucumber",
+						checked: order.sides.includes("Cucumber"),
 						src: cucumber
 					},
 					{
 						name: "Onions",
 						id: "onions",
+						checked: order.sides.includes("Onions"),
 						src: onions
 					},
 					{
 						name: "Pickled Ginger",
 						id: "pickled-ginger",
+						checked: order.sides.includes("Pickled Ginger"),
 						src: pickledGinger
 					},
 					{
 						name: "Wasabi",
 						id: "wasabi",
+						checked: order.sides.includes("Wasabi"),
 						src: wasabi
 					}
 				]}
+				checkHandler={ sidesHandler }
 			/>
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
