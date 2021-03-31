@@ -74,6 +74,10 @@ const CustomerInfo = props => {
 					<span>None</span>
 				}
 			</div>
+			<div className="order-sum">
+				<span>Special Requests:</span>
+				<textarea name="requests" cols="50" rows="5" onChange={ e => setOrder({ ...order, [e.target.name]: e.target.value })}></textarea>
+			</div>
             <div className="cust-info">
                 <label htmlFor="fname">First Name:</label>
                 <input type="text" name="fname" onChange={ changeHandler } />
