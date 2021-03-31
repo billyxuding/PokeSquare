@@ -31,6 +31,18 @@ function App() {
 					order.sauces.map((item, i) => <li key={i}>{ item }</li>)
 				}
 			</ul>
+			<p>Sides:</p>
+			<ul>
+				{
+					order.sides.map((item, i) => <li key={i}>{ item }</li>)
+				}
+			</ul>
+			<p>Toppings:</p>
+			<ul>
+				{
+					order.toppings.map((item, i) => <li key={i}>{ item }</li>)
+				}
+			</ul>
 			<Menu order={ order } setOrder={ setOrder } />
 		</>
 	);
