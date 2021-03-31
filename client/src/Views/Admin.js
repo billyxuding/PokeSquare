@@ -42,33 +42,41 @@ const Admin = () => {
                             <td>{ order.email }</td>
                             <td>{ order.base }</td>
                             <td>
-								<ol>
+								<ul>
 									{
 										order.proteins.map((protein, i) =>
 											<li key={i}>{ protein }</li>
 										)
 									}
-								</ol>
+								</ul>
 							</td>
                             <td>
-								<ol>
+								<ul>
 									{
 										order.sauces.map((sauce, i) =>
 											<li key={i}>{ sauce }</li>
 										)
 									}
-								</ol>
+								</ul>
 							</td>
                             <td>
-								<ol>
+								<ul>
 									{
 										order.sides.map((side, i) =>
 											<li key={i}>{ side }</li>
 										)
 									}
-								</ol>
+								</ul>
 							</td>
-                            <td>{ order.toppings }</td>
+                            <td>
+								<ul>
+									{
+										order.proteins.map((protein, i) =>
+											<li key={i}>{ protein }</li>
+										)
+									}
+								</ul>
+							</td>
                             <td>{ order.requests }</td>
                         </tr>
                     )

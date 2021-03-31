@@ -83,6 +83,8 @@
 
 ul {
 	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 textarea {
@@ -91,4 +93,7 @@ textarea {
 
 table {
 	margin: auto;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 15px;
 }
