@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Router } from '@reach/router';
 import './App.css';
 import Menu from './Views/Menu';
 
@@ -13,37 +14,9 @@ function App() {
 
 	return (
 		<>
-			<h1>
-				Create Your Bowl<br />
-				<span className="block subheader1">Every Bowl Is Made To Order</span>
-			</h1>
-			<p>What you've got so far:</p>
-			<p>Base: { order.base }</p>
-			<p>Proteins:</p>
-			<ul>
-				{
-					order.proteins.map((item, i) => <li key={i}>{ item }</li>)
-				}
-			</ul>
-			<p>Sauces:</p>
-			<ul>
-				{
-					order.sauces.map((item, i) => <li key={i}>{ item }</li>)
-				}
-			</ul>
-			<p>Sides:</p>
-			<ul>
-				{
-					order.sides.map((item, i) => <li key={i}>{ item }</li>)
-				}
-			</ul>
-			<p>Toppings:</p>
-			<ul>
-				{
-					order.toppings.map((item, i) => <li key={i}>{ item }</li>)
-				}
-			</ul>
-			<Menu order={ order } setOrder={ setOrder } />
+			<Router>
+				<Menu path="/order" order={ order } setOrder={ setOrder } />
+			</Router>
 		</>
 	);
 }

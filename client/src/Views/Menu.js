@@ -10,6 +10,10 @@ const Menu = props => {
 
     return (
         <div>
+			<h1>
+				Create Your Bowl<br />
+				<span className="block subheader1">Every Bowl Is Made To Order</span>
+			</h1>
             <h2>
 				Base
 				<span className="block subheader2">Choose 1</span>
