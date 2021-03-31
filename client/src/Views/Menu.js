@@ -17,6 +17,15 @@ import cucumber from '../Images/sides/cucumber.png';
 import onions from '../Images/sides/onions.png';
 import pickledGinger from '../Images/sides/pickled-ginger.png';
 import wasabi from '../Images/sides/wasabi.png';
+import corn from '../Images/toppings/corn.png';
+import drySeaweed from '../Images/toppings/dry-seaweed.png';
+import friedGarlic from '../Images/toppings/fried-garlic.png';
+import crispyOnion from '../Images/toppings/crispy-onion.png';
+import masago from '../Images/toppings/masago.png';
+import greenOnion from '../Images/toppings/green-onion.png';
+import furikake from '../Images/toppings/furikake.png';
+import edamame from '../Images/toppings/edamame.png';
+import sesameSeeds from '../Images/toppings/sesame-seeds.png';
 import logo from '../Images/logo.png';
 
 const Menu = props => {
@@ -127,8 +136,66 @@ const Menu = props => {
 				]}
 				checkHandler={ e => checkHandler(e, "sides") }
 			/>
-			<h2>Toppings</h2>
-			<Toppings order={ order } setOrder={ setOrder } />
+			<h2>Toppings Refactored</h2>
+			<Category
+				ingredients={[
+					{
+						name: "Corn",
+						id: "corn",
+						checked: order.toppings.includes("Corn"),
+						src: corn
+					},
+					{
+						name: "Dry Seaweed",
+						id: "dry-seaweed",
+						checked: order.toppings.includes("Dry Seaweed"),
+						src: drySeaweed
+					},
+					{
+						name: "Fried Garlic",
+						id: "fried-garlic",
+						checked: order.toppings.includes("Fried Garlic"),
+						src: friedGarlic
+					},
+					{
+						name: "Crispy Onion",
+						id: "crispy-onion",
+						checked: order.toppings.includes("Crispy Onion"),
+						src: crispyOnion
+					},
+					{
+						name: "Masago",
+						id: "masago",
+						checked: order.toppings.includes("Masago"),
+						src: masago
+					},
+					{
+						name: "Green Onion",
+						id: "green-onion",
+						checked: order.toppings.includes("Green Onion"),
+						src: greenOnion
+					},
+					{
+						name: "Furikake",
+						id: "furikake",
+						checked: order.toppings.includes("Furikake"),
+						src: furikake
+					},
+					{
+						name: "Edamame",
+						id: "edamame",
+						checked: order.toppings.includes("Edamame"),
+						src: edamame
+					},
+					{
+						name: "Sesame Seeds",
+						id: "sesame-seeds",
+						checked: order.toppings.includes("Sesame Seeds"),
+						src: sesameSeeds
+					}
+				]}
+				checkHandler={ e => checkHandler(e, "toppings") }
+			/>
 			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </div>
