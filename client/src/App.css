@@ -1,4 +1,7 @@
 .category {
+	max-width: 1200px;
+	min-width: 375px;
+	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
