@@ -70,3 +70,7 @@ h1 {
 	align-items: center;
 	justify-content: space-between;
 }
+
+textarea {
+	resize: none;
+}
