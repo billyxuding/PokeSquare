@@ -14,7 +14,7 @@ const Admin = () => {
             })
             .catch(err => console.log(err));
         return () => mounted = false;
-    }, []);
+    }, [orderList]);
 
     return (
         <>
