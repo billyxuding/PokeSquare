@@ -18,6 +18,19 @@ import logo from '../Images/logo.png';
 const Menu = props => {
     const { order, setOrder } = props;
 
+	const sidesHandler = e => {
+        let newArray;
+        if (e.target.checked) {
+            newArray = [...order.sides, e.target.name];
+        } else {
+            newArray = order.sides.filter((item) => item !== e.target.name);
+        }
+        setOrder({
+            ...order,
+            sides: newArray
+        });
+    }
+
     return (
         <div>
 			<h1>
@@ -33,12 +46,11 @@ const Menu = props => {
 			<Proteins order={ order } setOrder={ setOrder } />
 			<h2>Sauces</h2>
 			<Sauces order={ order } setOrder={ setOrder } />
-			<h2>Sides</h2>
-			<Sides order={ order } setOrder={ setOrder } />
+			{/* <h2>Sides</h2>
+			<Sides order={ order } setOrder={ setOrder } /> */}
 			<h2>Sides Refactored</h2>
 			<Category
-				order={ order }
-				setOrder={ setOrder }
+				checkHandler={ sidesHandler }
 				sides={[
 					{
 						name: "Crab Salad",
@@ -49,6 +61,31 @@ const Menu = props => {
 						name: "Seaweed Salad",
 						id: "seaweed-salad",
 						src: seaweedSalad
+					},
+					{
+						name: "Avocado",
+						id: "avocado",
+						src: avocado
+					},
+					{
+						name: "Cucumber",
+						id: "cucumber",
+						src: cucumber
+					},
+					{
+						name: "Onions",
+						id: "onions",
+						src: onions
+					},
+					{
+						name: "Pickled Ginger",
+						id: "pickled-ginger",
+						src: pickledGinger
+					},
+					{
+						name: "Wasabi",
+						id: "wasabi",
+						src: wasabi
 					}
 				]}
 			/>
