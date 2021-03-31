@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import Bases from '../Components/Bases';
 import Category from '../Components/Category';
 
 // images
+import whiteRice from '../Images/bases/white-rice.png';
+import brownRice from '../Images/bases/brown-rice.png';
+import salad from '../Images/bases/salad.png';
 import tuna from '../Images/proteins/tuna.png';
 import salmon from '../Images/proteins/salmon.png';
 import shrimp from '../Images/proteins/shrimp.png';
@@ -36,6 +40,13 @@ import logo from '../Images/logo.png';
 const Menu = props => {
     const { order, setOrder } = props;
 
+	const baseHandler = e => {
+		setOrder({
+			...order,
+			[e.target.name]: e.target.value
+		})
+	}
+
 	const checkHandler = (e, type) => {
 		let newSauces;
         if (e.target.checked) {
@@ -56,7 +67,29 @@ const Menu = props => {
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
 			</h1>
             <h2>Base Refactored</h2>
-			{/* <Bases order={ order } setOrder={ setOrder } /> */}
+			<Bases
+				options={[
+					{
+						value: "White Rice",
+						id: "white-rice",
+						checked: order.base === "White Rice",
+						src: whiteRice
+					},
+					{
+						value: "Brown Rice",
+						id: "brown-rice",
+						checked: order.base === "Brown Rice",
+						src: brownRice
+					},
+					{
+						value: "Spring Mix Salad",
+						id: "salad",
+						checked: order.base === "Spring Mix Salad",
+						src: salad
+					},
+				]}
+				checkHandler={ baseHandler }
+			/>
 			<h2>
 				Proteins Refactored
 				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
