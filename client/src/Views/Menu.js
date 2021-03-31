@@ -14,10 +14,7 @@ const Menu = props => {
 				Create Your Bowl<br />
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
 			</h1>
-            <h2>
-				Base
-				<span className="block subheader2">Choose 1</span>
-			</h2>
+            <h2>Base</h2>
 			<Bases order={ order } setOrder={ setOrder } />
 			<h2>
 				Proteins
