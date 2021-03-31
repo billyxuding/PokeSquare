@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Category = props => {
-	const { order, setOrder, name, id, src } = props;
+	const { order, setOrder, sides } = props;
 
 	const checkHandler = e => {
         let newArray;
@@ -18,14 +18,17 @@ const Category = props => {
 
     return (
         <div className="ingredients">
-			{/* map the passed in array of objects */}
-            <div>
-                <input type="checkbox" name={ name } className="checkbox" id={ id } onChange={ checkHandler } />
-                <label className="label" htmlFor={ id }>
-                    <h3>{ name }</h3>
-                    <img src={ src } alt={ name } />
-                </label>
-            </div>
+			{
+				sides.map((item, i) =>
+					<div key={i}>
+						<input type="checkbox" name={ item.name } className="checkbox" id={ item.id } onChange={ checkHandler } />
+						<label className="label" htmlFor={ item.id }>
+							<h3>{ item.name }</h3>
+							<img src={ item.src } alt={ item.name } />
+						</label>
+					</div>
+				)
+			}
         </div>
     )
 };

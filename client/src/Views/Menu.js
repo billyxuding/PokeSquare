@@ -38,10 +38,19 @@ const Menu = props => {
 			<h2>Sides Refactored</h2>
 			<Category
 				order={ order }
-				setOrder={ setOrder}
-				name="Crab Salad"
-				id="crab-salad"
-				src={ crabSalad }
+				setOrder={ setOrder }
+				sides={[
+					{
+						name: "Crab Salad",
+						id: "crab-salad",
+						src: crabSalad
+					},
+					{
+						name: "Seaweed Salad",
+						id: "seaweed-salad",
+						src: seaweedSalad
+					}
+				]}
 			/>
 			<h2>Toppings</h2>
 			<Toppings order={ order } setOrder={ setOrder } />
