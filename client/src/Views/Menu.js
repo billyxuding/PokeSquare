@@ -65,7 +65,7 @@ const Menu = props => {
 				Create Your Bowl<br />
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
 			</h1>
-            <h2>Base Refactored</h2>
+            <h2>Base</h2>
 			<Category
 				type={ "radio" }
 				options={ [
@@ -91,7 +91,7 @@ const Menu = props => {
 				checkHandler={ baseHandler }
 			/>
 			<h2>
-				Proteins Refactored
+				Proteins
 				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
 			</h2>
 			<Category
@@ -148,7 +148,7 @@ const Menu = props => {
 				] }
 				checkHandler={ e => checkHandler(e, "proteins")}
 			/>
-			<h2>Sauces Refactored</h2>
+			<h2>Sauces</h2>
 			<Category
 				type={ "checkbox" }
 				options={ [
@@ -179,7 +179,7 @@ const Menu = props => {
 				] }
 				checkHandler={ e => checkHandler(e, "sauces") }
 			/>
-			<h2>Sides Refactored</h2>
+			<h2>Sides</h2>
 			<Category
 				type={ "checkbox" }
 				options={ [
@@ -228,7 +228,7 @@ const Menu = props => {
 				] }
 				checkHandler={ e => checkHandler(e, "sides") }
 			/>
-			<h2>Toppings Refactored</h2>
+			<h2>Toppings</h2>
 			<Category
 				type={ "checkbox" }
 				options={ [
