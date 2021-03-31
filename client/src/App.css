@@ -1,11 +1,12 @@
-.ingredients {
+.category {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
-	.ingredients div {
-		margin: 15px;
-	}
+
+.option {
+	margin: 15px;
+}
 
 .block {
 	margin-top: 10px;
@@ -15,7 +16,7 @@
 	display: block;
 }
 
-h1 {
+.create-bowl {
 	font-size: 36pt;
 }
 

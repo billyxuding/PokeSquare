@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import Bases from '../Components/Bases';
-import Proteins from '../Components/Proteins';
-import Sauces from '../Components/Sauces';
-import Sides from '../Components/Sides';
 import Category from '../Components/Category';
-import Toppings from '../Components/Toppings';
+
+// images
+import tuna from '../Images/proteins/tuna.png';
+import salmon from '../Images/proteins/salmon.png';
+import shrimp from '../Images/proteins/shrimp.png';
+import albacore from '../Images/proteins/albacore.png';
+import tako from '../Images/proteins/tako.png';
+import spicyTuna from '../Images/proteins/spicy-tuna.png';
+import scallops from '../Images/proteins/scallop.png';
+import tofu from '../Images/proteins/tofu.png';
 import housePoke from '../Images/sauces/house-poke.png';
 import srirachaAioli from '../Images/sauces/sriracha-aioli.png';
 import wasabiAioli from '../Images/sauces/wasabi-aioli.png';
@@ -46,21 +51,72 @@ const Menu = props => {
 
     return (
         <div>
-			<h1>
+			<h1 className="create-bowl">
 				Create Your Bowl<br />
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
 			</h1>
-            <h2>Base</h2>
-			<Bases order={ order } setOrder={ setOrder } />
+            <h2>Base Refactored</h2>
+			{/* <Bases order={ order } setOrder={ setOrder } /> */}
 			<h2>
-				Proteins
+				Proteins Refactored
 				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
 			</h2>
-			<Proteins order={ order } setOrder={ setOrder } />
-			<h2>Sauces Refactored</h2>
-			{/* <Sauces order={ order } setOrder={ setOrder } /> */}
 			<Category
-				ingredients={[
+				options={[
+					{
+						name: "Tuna",
+						id: "tuna",
+						checked: order.proteins.includes("Tuna"),
+						src: tuna
+					},
+					{
+						name: "Salmon",
+						id: "salmon",
+						checked: order.proteins.includes("Salmon"),
+						src: salmon
+					},
+					{
+						name: "Shrimp",
+						id: "shrimp",
+						checked: order.proteins.includes("Shrimp"),
+						src: shrimp
+					},
+					{
+						name: "Albacore",
+						id: "albacore",
+						checked: order.proteins.includes("Albacore"),
+						src: albacore
+					},
+					{
+						name: "Tako",
+						id: "tako",
+						checked: order.proteins.includes("Tako"),
+						src: tako
+					},
+					{
+						name: "Spicy Tuna",
+						id: "spicy-tuna",
+						checked: order.proteins.includes("Spicy Tuna"),
+						src: spicyTuna
+					},
+					{
+						name: "Scallops",
+						id: "scallops",
+						checked: order.proteins.includes("Scallops"),
+						src: scallops
+					},
+					{
+						name: "Tofu",
+						id: "tofu",
+						checked: order.proteins.includes("Tofu"),
+						src: tofu
+					}
+				]}
+				checkHandler={ e => checkHandler(e, "proteins")}
+			/>
+			<h2>Sauces Refactored</h2>
+			<Category
+				options={[
 					{
 						name: "House Poke",
 						id: "house-poke",
@@ -90,7 +146,7 @@ const Menu = props => {
 			/>
 			<h2>Sides Refactored</h2>
 			<Category
-				ingredients={[
+				options={[
 					{
 						name: "Crab Salad",
 						id: "crab-salad",
@@ -138,7 +194,7 @@ const Menu = props => {
 			/>
 			<h2>Toppings Refactored</h2>
 			<Category
-				ingredients={[
+				options={[
 					{
 						name: "Corn",
 						id: "corn",
