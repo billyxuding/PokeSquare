@@ -81,10 +81,14 @@
 	justify-content: space-between;
 }
 
-.order-sum ul {
+ul {
 	list-style-type: none;
 }
 
 textarea {
 	resize: none;
+}
+
+table {
+	margin: auto;
 }
