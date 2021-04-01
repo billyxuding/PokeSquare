@@ -12,18 +12,18 @@ module.exports = {
         Order.find()
             .then(data => res.json({ message: "success", results: data }))
             .catch(err => res.json({ message: "error", errors: err.errors }));
-    }
-    // getOneSomethings: (req, res) => {
-    //     Something.findById(req.params.id)
-    //         .then(data => res.json({ message: "success", results: data }))
-    //         .catch(err => res.json({ message: "error", errors: err.errors }));
-    // },
+    },
+    getPendingOrders: (req, res) => {
+        Order.find({ pickedUp: false })
+            .then(data => res.json({ message: "success", results: data }))
+            .catch(err => res.json({ message: "error", errors: err.errors }));
+    },
     // Update
-    // updateSomething: (req, res) => {
-    //     Something.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
-    //         .then(data => res.json({ message: "success", results: data }))
-    //         .catch(err => res.json({ message: "error", errors: err.errors }));
-    // },
+    updateOrder: (req, res) => {
+        Order.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
+            .then(data => res.json({ message: "success", results: data }))
+            .catch(err => res.json({ message: "error", errors: err.errors }));
+    }
     // Delete
     // deleteSomething: (req, res) => {
     //     Something.findByIdAndDelete(req.params.id)

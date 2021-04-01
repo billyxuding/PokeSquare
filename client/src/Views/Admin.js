@@ -1,24 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Admin = () => {
+const Admin = props => {
 	const [orderList, setOrderList] = useState([]);
+    const { type } = props;
 
 	useEffect(() => {
         let mounted = true;
-        axios.get("http://localhost:8000/api/get")
-            .then(res => {
-                if (mounted) {
-                    setOrderList(res.data.results);
-                }
-            })
-            .catch(err => console.log(err));
+        if (type === "all") {
+            axios.get("http://localhost:8000/api/get/all")
+                .then(res => {
+                    if (mounted) {
+                        setOrderList(res.data.results);
+                    }
+                })
+                .catch(err => console.log(err));
+        } else {
+            axios.get("http://localhost:8000/api/get/pending")
+                .then(res => {
+                    if (mounted) {
+                        setOrderList(res.data.results);
+                    }
+                })
+                .catch(err => console.log(err));
+        }
         return () => mounted = false;
-    }, [orderList]);
+    }, [orderList, type]);
+
+    const pickedUp = thisOrder => {
+		thisOrder.pickedUp = true;
+		console.log(thisOrder.pickedUp);
+		axios.put(`http://localhost:8000/api/${thisOrder._id}`, thisOrder)
+			.then(res => console.log(res.data))
+			.catch(err => console.log(err));
+    }
 
     return (
         <>
-            <h1>Order History</h1>
+            {
+                type === "all" ?
+                <h1>Order History</h1> :
+                <h1>Pending Orders</h1>
+            }
             <table>
                 <thead>
                     <tr>
@@ -78,6 +101,7 @@ const Admin = () => {
 								</ul>
 							</td>
                             <td>{ order.requests }</td>
+                            <td><button onClick={ () => pickedUp(order) }>Picked Up</button></td>
                         </tr>
                     )
                 }

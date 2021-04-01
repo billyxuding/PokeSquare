@@ -36,6 +36,10 @@ const OrderSchema = new mongoose.Schema({
     },
     requests: {
         type: String
+    },
+    pickedUp: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
 
