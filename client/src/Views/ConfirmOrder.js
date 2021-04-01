@@ -29,6 +29,26 @@ const ConfirmOrder = props => {
 		.catch(err => console.log("error:", err))
 	};
 
+	const checkoutHandler = async (event) => {
+		// Get Stripe.js instance
+		const stripe = await stripePromise;
+	
+		// Call backend to create the Checkout Session
+		const response = await fetch('http://localhost:8000/create-checkout-session', { method: 'POST' });
+	
+		const session = await response.json();
+	
+		// When user clicks on the button, redirect to Checkout.
+		const result = await stripe.redirectToCheckout({
+			sessionId: session.id,
+		});
+	
+		if (result.error) {
+		  // If `redirectToCheckout` fails due to a browser or network
+		  // error, display the localized error message to your customer
+		  // using `result.error.message`.
+		}
+	};
 
     return (
         <>
@@ -106,7 +126,7 @@ const ConfirmOrder = props => {
 				<input type="text" name="email" onChange={ changeHandler } />
 			</div>
 			<button className="place-order" onClick={ submitHandler }>Place Order</button>
-			<button role="link">Checkout</button>
+			<button role="link" onClick={ checkoutHandler }>Checkout</button>
         </>
     )
 };

@@ -3,6 +3,14 @@ const app = express();
 
 const cors = require("cors");
 
+require("./config/mongoose.config");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
+require("./routes/routes")(app);
+
 const stripe = require('stripe')('sk_test_51IbJ6LBx7QZ9wBYOhCX4nGGjWZ8nPIWjftxC7qYgMgcZMiKifAiHjo7WxwusCEDGJNkxd3ojwyFPT8g43RB0iyEP00UVq3IPJp'); // secret test key linked to Stripe account
 
 app.post('/create-checkout-session', async (req, res) => {
@@ -27,13 +35,5 @@ app.post('/create-checkout-session', async (req, res) => {
 	});
 	res.json({ id: session.id });
 });
-
-require("./config/mongoose.config");
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-
-require("./routes/routes")(app);
 
 app.listen(8000, () => console.log("Server is locked and loaded on port 8000"));
