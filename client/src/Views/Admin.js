@@ -7,25 +7,14 @@ const Admin = props => {
 
 	useEffect(() => {
         let mounted = true;
-        if (type === "all") {
-            axios.get("http://localhost:8000/api/get/all")
-                .then(res => {
-                    if (mounted) {
-                        setOrderList(res.data.results);
-                    }
-					console.log(res.data);
-                })
-                .catch(err => console.log(err));
-		} else {
-			axios.get("http://localhost:8000/api/get/pending")
-				.then(res => {
-					if (mounted) {
-						setOrderList(res.data.results);
-					}
-					console.log(res.data);
-				})
-				.catch(err => console.log(err));
-        }
+        axios.get(`http://localhost:8000/api/get/${type}`)
+            .then(res => {
+                if (mounted) {
+                    setOrderList(res.data.results);
+                }
+                console.log(res.data);
+            })
+            .catch(err => console.log(err));
         return () => mounted = false;
     }, [type]);
 
