@@ -103,7 +103,11 @@ const Admin = props => {
 								</ul>
 							</td>
                             <td>{ order.requests }</td>
-                            <td><button onClick={ () => pickedUp(order) }>Picked Up</button></td>
+							{
+								order.pickedUp === false ?
+								<td><button onClick={ () => pickedUp(order) }>Picked Up</button></td> :
+								<td></td>
+							}
                         </tr>
                     )
                 }
