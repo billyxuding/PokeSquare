@@ -110,3 +110,8 @@ table {
 tr:nth-child(even) {
 	background-color: rgb(226, 226, 226);
 }
+
+.required {
+	margin-top: 50px;
+	font-size: 10pt;
+}

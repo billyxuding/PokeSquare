@@ -88,6 +88,7 @@ const ConfirmOrder = props => {
 			<Link to="/order"><button className="edit-order">Edit Order</button></Link>
 			<span className="block">Special Requests:</span>
 			<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
+			<p className="required">*required</p>
             <div className="cust-info">
                 <label htmlFor="fname">First Name:</label>
                 <input type="text" name="fname" onChange={ changeHandler } />
