@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 
 const stripe = require('stripe')('sk_test_51IbJ6LBx7QZ9wBYOhCX4nGGjWZ8nPIWjftxC7qYgMgcZMiKifAiHjo7WxwusCEDGJNkxd3ojwyFPT8g43RB0iyEP00UVq3IPJp'); // secret test key linked to Stripe account
+
 app.post('/create-checkout-session', async (req, res) => {
 	const session = await stripe.checkout.sessions.create({
 		payment_method_types: ['card'],
@@ -21,8 +22,8 @@ app.post('/create-checkout-session', async (req, res) => {
 			}
 		],
 		mode: 'payment',
-		success_url: 'http://localhost:3000/checkout?success=true',
-		cancel_url: 'http://localhost:3000/checkout?canceled=true'
+		success_url: 'http://localhost:3000/success',
+		cancel_url: 'http://localhost:3000/cancel'
 	});
 	res.json({ id: session.id });
 });

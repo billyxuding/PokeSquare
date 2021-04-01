@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link, navigate } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 
+const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
+
 const ConfirmOrder = props => {
 	const { order, setOrder } = props;
 	
@@ -27,7 +29,6 @@ const ConfirmOrder = props => {
 		.catch(err => console.log("error:", err))
 	};
 
-	const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj');
 
     return (
         <>
