@@ -1,30 +1,33 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
+import { loadStripe } from '@stripe/stripe-js';
 
 const ConfirmOrder = props => {
 	const { order, setOrder } = props;
-
+	
 	const changeHandler = e => {
 		setOrder({
 			...order,
 			[e.target.name]: e.target.value
 		});
 	};
-
+	
 	const submitHandler = e => {
 		e.preventDefault();
 		axios.post("http://localhost:8000/api/new", order)
-			.then(res => {
-				console.log("response:", res.data);
-				if (res.data.message === "success") {
-					navigate("/success");
-				} else {
-					// set error messages
-				}
-			})
-			.catch(err => console.log("error:", err))
+		.then(res => {
+			console.log("response:", res.data);
+			if (res.data.message === "success") {
+				navigate("/success");
+			} else {
+				// set error messages
+			}
+		})
+		.catch(err => console.log("error:", err))
 	};
+
+	const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj');
 
     return (
         <>
