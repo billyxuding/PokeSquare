@@ -107,6 +107,10 @@ table {
 	border-spacing: 0;
 }
 
+tr {
+	vertical-align: top;
+}
+
 tr:nth-child(even) {
 	background-color: rgb(226, 226, 226);
 }
