@@ -17,7 +17,11 @@ const ConfirmOrder = props => {
 		axios.post("http://localhost:8000/api/new", order)
 			.then(res => {
 				console.log("response:", res.data);
-				navigate("/success");
+				if (res.data.message === "success") {
+					navigate("/success");
+				} else {
+					// set error messages
+				}
 			})
 			.catch(err => console.log("error:", err))
 	};

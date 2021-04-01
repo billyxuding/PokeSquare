@@ -19,11 +19,12 @@ const OrderSchema = new mongoose.Schema({
         minlength: [5, "email must be at least 5 characters long"]
     },
     base: {
-        type: String
+        type: String,
+		required: [true, "please select a base"]
     },
     proteins: {
         type: [String],
-        validate: [arrayLimit, "please choose between 2-3 proteins"]
+        validate: [arrayLimit, "please choose up to 3 proteins"]
     },
     sauces: {
         type: [String]
