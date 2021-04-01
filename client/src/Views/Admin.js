@@ -18,7 +18,7 @@ const Admin = () => {
 
     return (
         <>
-            <h1>All Orders</h1>
+            <h1>Order History</h1>
             <table>
                 <thead>
                     <tr>
