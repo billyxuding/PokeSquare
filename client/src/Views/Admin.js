@@ -44,7 +44,6 @@ const Admin = props => {
                         <th>Sides</th>
                         <th>Toppings</th>
                         <th>Special Requests</th>
-                        <th>Time Ordered</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,7 +90,6 @@ const Admin = props => {
 								</ul>
 							</td>
                             <td>{ order.requests }</td>
-                            <td>{ order.createdAt }</td>
 							{
 								order.pickedUp === false ?
 								<td><button onClick={ () => pickedUp(order) }>Picked Up</button></td> :
