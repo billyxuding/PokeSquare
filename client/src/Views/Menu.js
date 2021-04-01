@@ -92,7 +92,7 @@ const Menu = props => {
 			/>
 			<h2>
 				Proteins
-				<span className="block subheader2">Choose 2 &#40;regular&#41; or 3 &#40;large&#41; proteins</span>
+				<span className="block subheader2">Choose up to 3 proteins</span>
 			</h2>
 			<Category
 				type={ "checkbox" }
