@@ -22,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
 					currency: 'usd',
 					product_data: {
 						name: 'Poke Bowl',
-						images: ['./pokebowldrawing.jpeg'],
+						images: ['https://media.istockphoto.com/illustrations/poke-bowl-hawaiian-cuisine-food-natural-restaurant-illustration-id1125696704?k=6&m=1125696704&s=170667a&w=0&h=aRxGfVEs8L2ptd2dx2wn6LGwTdEnP7Kjn_qhaLtC0kg='],
 					},
 					unit_amount: 1495,
 				},
