@@ -13,26 +13,28 @@ const Admin = props => {
                     if (mounted) {
                         setOrderList(res.data.results);
                     }
+					console.log(res.data);
                 })
                 .catch(err => console.log(err));
-        } else {
-            axios.get("http://localhost:8000/api/get/pending")
-                .then(res => {
-                    if (mounted) {
-                        setOrderList(res.data.results);
-                    }
-                })
-                .catch(err => console.log(err));
+		} else {
+			axios.get("http://localhost:8000/api/get/pending")
+				.then(res => {
+					if (mounted) {
+						setOrderList(res.data.results);
+					}
+					console.log(res.data);
+				})
+				.catch(err => console.log(err));
         }
         return () => mounted = false;
-    }, [orderList, type]);
+    }, [type]);
 
     const pickedUp = thisOrder => {
 		thisOrder.pickedUp = true;
-		console.log(thisOrder.pickedUp);
 		axios.put(`http://localhost:8000/api/${thisOrder._id}`, thisOrder)
 			.then(res => console.log(res.data))
 			.catch(err => console.log(err));
+		// remove from DOM
     }
 
     return (
