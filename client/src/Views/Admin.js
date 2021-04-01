@@ -34,7 +34,7 @@ const Admin = props => {
 		axios.put(`http://localhost:8000/api/${thisOrder._id}`, thisOrder)
 			.then(res => console.log(res.data))
 			.catch(err => console.log(err));
-		// remove from DOM
+		setOrderList(orderList.filter(order => order._id !== thisOrder._id));
     }
 
     return (
