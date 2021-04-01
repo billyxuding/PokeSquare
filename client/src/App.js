@@ -25,7 +25,7 @@ function App() {
 				<Menu path="/order" order={ order } setOrder={ setOrder } />
 				<ConfirmOrder path="/order/confirm" order={ order } setOrder={ setOrder } />
 				<Success path="/success" />
-				<Admin path="/admin" />
+				<Admin path="/admin/all" />
 			</Router>
 		</>
 	);
