@@ -289,7 +289,7 @@ const Menu = props => {
 				] }
 				checkHandler={ e => checkHandler(e, "toppings") }
 			/>
-			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>
+			<Link to="/order/confirm"><button className="checkout">Review Order</button></Link>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </>
     )
