@@ -14,19 +14,6 @@ const ConfirmOrder = props => {
 			[e.target.name]: e.target.value
 		});
 	};
-	
-	// const submitHandler = e => {
-	// 	axios.post("http://localhost:8000/api/new", order)
-	// 	.then(res => {
-	// 		console.log("response:", res.data);
-	// 		if (res.data.message === "success") {
-	// 			navigate("/success");
-	// 		} else {
-	// 			// set error messages
-	// 		}
-	// 	})
-	// 	.catch(err => console.log("error:", err))
-	// };
 
 	const checkoutHandler = async (event) => {
 		axios.post("http://localhost:8000/api/new", order)
@@ -38,7 +25,6 @@ const ConfirmOrder = props => {
 
 		// Call backend to create the Checkout Session
 		const response = await fetch('http://localhost:8000/create-checkout-session', { method: 'POST' });
-
 		const session = await response.json();
 
 		// When user clicks on the button, redirect to Checkout.
