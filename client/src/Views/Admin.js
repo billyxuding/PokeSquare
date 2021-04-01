@@ -49,7 +49,6 @@ const Admin = props => {
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Email</th>
                         <th>Base</th>
                         <th>Proteins</th>
                         <th>Sauces</th>
@@ -65,7 +64,6 @@ const Admin = props => {
                         <tr key={i}>
                             <td>{ order.fname }</td>
                             <td>{ order.lname }</td>
-                            <td>{ order.email }</td>
                             <td>{ order.base }</td>
                             <td>
 								<ul>

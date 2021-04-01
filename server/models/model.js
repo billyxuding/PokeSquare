@@ -13,11 +13,6 @@ const OrderSchema = new mongoose.Schema({
         required: [true, "last name is required"],
         minlength: [2, "last name must be at least 2 characters long"]
     },
-    email: {
-        type: String,
-        required: [true, "email is required"],
-        minlength: [5, "email must be at least 5 characters long"]
-    },
     base: {
         type: String,
 		required: [true, "please select a base"]
