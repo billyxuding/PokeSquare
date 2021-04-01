@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+mongoose.set('useFindAndModify', false);
+
 const arrayLimit = val => val.length <= 3;
 
 const OrderSchema = new mongoose.Schema({
