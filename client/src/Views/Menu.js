@@ -60,7 +60,7 @@ const Menu = props => {
 	}
 
     return (
-        <div>
+        <>
 			<h1 className="create-bowl">
 				Create Your Bowl<br />
 				<span className="block subheader1">Every Bowl Is Made To Order</span>
@@ -291,7 +291,7 @@ const Menu = props => {
 			/>
 			<Link to="/order/confirm"><button className="checkout">Proceed To Checkout</button></Link>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />
-        </div>
+        </>
     )
 };
 
