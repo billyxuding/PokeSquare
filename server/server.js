@@ -10,16 +10,16 @@ app.post('/create-checkout-session', async (req, res) => {
 		payment_method_types: ['card'],
 		line_items: [
 			{
-			price_data: {
-				currency: 'usd',
-				product_data: {
-				name: 'Stubborn Attachments',
-				images: ['https://i.imgur.com/EHyR2nP.png'],
+				price_data: {
+					currency: 'usd',
+					product_data: {
+					name: 'Poke Bowl',
+					images: ['./pokebowldrawing.jpeg'],
+					},
+					unit_amount: 1495,
 				},
-				unit_amount: 2000,
-			},
-			quantity: 1,
-			},
+				quantity: 1
+			}
 		],
 		mode: 'payment',
 		success_url: `${LOCAL_3000}?success=true`,
