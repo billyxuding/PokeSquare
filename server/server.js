@@ -23,7 +23,7 @@ app.post('/create-checkout-session', async (req, res) => {
 		],
 		mode: 'payment',
 		success_url: `${LOCAL_3000}?success=true`,
-		cancel_url: `${LOCAL_3000}?canceled=true`,
+		cancel_url: `${LOCAL_3000}?canceled=true`
 	});
 	res.json({ id: session.id });
 });
