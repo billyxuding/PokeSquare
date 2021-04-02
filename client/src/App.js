@@ -5,6 +5,7 @@ import Menu from './Views/Menu';
 import Success from './Views/Success';
 import Cancel from './Views/Cancel';
 import Admin from './Views/Admin';
+import Home from './Views/Home';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -20,6 +21,7 @@ function App() {
 
 	return (
 		<Router>
+			<Home path="/home" />
 			<Menu path="/order" order={ order } setOrder={ setOrder } />
 			<Success path="/success" />
 			<Cancel path="/cancel" />
