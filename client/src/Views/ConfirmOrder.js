@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
-import List from '../Components/List';
 import OrderSum from '../Components/OrderSum';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
