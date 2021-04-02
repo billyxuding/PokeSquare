@@ -69,8 +69,12 @@
 	text-decoration: none;
 }
 
+.cust-info {
+	display: flex;
+	justify-content: center;
+}
 
-.cust-info, .order-sum {
+.order-sum {
 	margin-top: 10px;
 	margin-bottom: 20px;
 	margin-left: auto;

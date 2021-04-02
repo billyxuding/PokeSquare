@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 import OrderSum from '../Components/OrderSum';
-import { Paper, Button } from '@material-ui/core';
+import { Paper, Button, TextField } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
@@ -60,13 +60,33 @@ const ConfirmOrder = props => {
 				</Link>
 				<span className="block">Special Requests:</span>
 				<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
-				<div className="cust-info">
+				{/* <div className="cust-info">
 					<label htmlFor="fname"><span className="red">*</span>First Name:</label>
 					<input type="text" name="fname" onChange={ changeHandler } />
 				</div>
 				<div className="cust-info">
 					<label htmlFor="lname"><span className="red">*</span>Last Name:</label>
 					<input type="text" name="lname" onChange={ changeHandler } />
+				</div> */}
+				<div className="cust-info">
+					<TextField
+						required
+						label="First Name"
+						variant="outlined"
+						size="small"
+						style={{ margin: 5 }}
+						name="fname"
+						onChange={ changeHandler }
+					/>
+					<TextField
+						required
+						label="Last Name"
+						variant="outlined"
+						size="small"
+						style={{ margin: 5 }}
+						name="lname"
+						onChange={ changeHandler }
+					/>
 				</div>
 				<p>Order Total: $14.95</p>
 				<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
