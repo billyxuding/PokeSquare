@@ -10,7 +10,9 @@
 .confirm-order-paper {
 	max-width: 600px;
 	min-width: 375px;
-	margin: auto;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 20px;
 }
 
@@ -66,9 +68,7 @@
 }
 
 .edit-order {
-	margin: 30px;
-	width: 100px;
-	height: 40px;
+	text-decoration: none;
 }
 
 .logo {

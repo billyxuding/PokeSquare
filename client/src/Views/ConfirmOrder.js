@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 import OrderSum from '../Components/OrderSum';
-import { Paper } from '@material-ui/core';
+import { Paper, Button } from '@material-ui/core';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
 
@@ -50,7 +50,11 @@ const ConfirmOrder = props => {
 				<OrderSum order={ order } category={ "sauces" } />
 				<OrderSum order={ order } category={ "sides" } />
 				<OrderSum order={ order } category={ "toppings" } />
-				<Link to="/order"><button className="edit-order">Edit Order</button></Link>
+				<Link to="/order" className="edit-order">
+					<Button variant="outlined" color="secondary" size="small">
+						Edit Order
+					</Button>
+				</Link>
 				<span className="block">Special Requests:</span>
 				<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
 				<p>Order Total: $14.95</p>
