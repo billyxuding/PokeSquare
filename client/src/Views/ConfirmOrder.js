@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 import List from '../Components/List';
+import OrderSum from '../Components/OrderSum';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
 
@@ -43,46 +44,11 @@ const ConfirmOrder = props => {
     return (
         <>
             <h1>Please confirm your order</h1>
-			<div className="order-sum">
-				<span>Base:</span>
-				{
-					order.base ?
-					<span>{ order.base }</span> :
-					<span>None</span>
-				}
-			</div>
-			<div className="order-sum">
-				<span>Proteins:</span>
-				{
-					order.proteins.length > 0 ?
-					<List order={ order } category={ "proteins" } /> :
-					<span>None</span>
-				}
-			</div>
-			<div className="order-sum">
-				<span>Sauces:</span>
-				{
-					order.sauces.length > 0 ?
-					<List order={ order } category={ "sauces" } /> :
-					<span>None</span>
-				}
-			</div>
-			<div className="order-sum">
-				<span>Sides:</span>
-				{
-					order.sides.length > 0 ?
-					<List order={ order } category={ "sides" } /> :
-					<span>None</span>
-				}
-			</div>
-			<div className="order-sum">
-				<span>Toppings:</span>
-				{
-					order.toppings.length > 0 ?
-					<List order={ order } category={ "toppings" } /> :
-					<span>None</span>
-				}
-			</div>
+			<OrderSum order={ order } header={ "Base:" } category={ "base" } />
+			<OrderSum order={ order } header={ "Proteins:" } category={ "proteins" } />
+			<OrderSum order={ order } header={ "Sauces:" } category={ "sauces" } />
+			<OrderSum order={ order } header={ "Sides:" } category={ "sides" } />
+			<OrderSum order={ order } header={ "Toppings:" } category={ "toppings" } />
 			<Link to="/order"><button className="edit-order">Edit Order</button></Link>
 			<span className="block">Special Requests:</span>
 			<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
