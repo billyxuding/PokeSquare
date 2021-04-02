@@ -7,7 +7,7 @@ import Category from '../Components/Category';
 import OrderSum from '../Components/OrderSum';
 
 // material-ui
-import { Button, FormControlLabel, Switch, Slide, Paper, TextField } from '@material-ui/core';
+import { Button, Slide, Paper, TextField } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
@@ -113,189 +113,194 @@ const Menu = props => {
 
     return (
         <>
-			<h1 className="create-bowl">
-				Create Your Bowl<br />
-				<span className="block subheader1">Every Bowl Is Made To Order</span>
-			</h1>
-            <h2>Base</h2>
-			<Category
-				order={ order }
-				type={ "radio" }
-				category={ "base" }
-				options={ [
-					{
-						name: "White Rice",
-						src: whiteRice
-					},
-					{
-						name: "Brown Rice",
-						src: brownRice
-					},
-					{
-						name: "Spring Mix Salad",
-						src: salad
-					},
-				] }
-				checkHandler={ baseHandler }
-			/>
-			<h2>
-				Proteins
-				<span className="block subheader2">Choose up to 3 proteins</span>
-			</h2>
-			<Category
-				order={ order }
-				type={ "checkbox" }
-				category={ "proteins" }
-				options={ [
-					{
-						name: "Tuna",
-						src: tuna
-					},
-					{
-						name: "Salmon",
-						src: salmon
-					},
-					{
-						name: "Shrimp",
-						src: shrimp
-					},
-					{
-						name: "Albacore",
-						src: albacore
-					},
-					{
-						name: "Tako",
-						src: tako
-					},
-					{
-						name: "Spicy Tuna",
-						src: spicyTuna
-					},
-					{
-						name: "Scallops",
-						src: scallops
-					},
-					{
-						name: "Tofu",
-						src: tofu
-					}
-				] }
-				checkHandler={ e => checkHandler(e, "proteins")}
-			/>
-			<h2>Sauces</h2>
-			<Category
-				order={ order }
-				type={ "checkbox" }
-				category={ "sauces" }
-				options={ [
-					{
-						name: "House Poke",
-						src: housePoke
-					},
-					{
-						name: "Sriracha Aioli",
-						src: srirachaAioli
-					},
-					{
-						name: "Wasabi Aioli",
-						src: wasabiAioli
-					},
-					{
-						name: "Zesty Ponzu",
-						src: zestyPonzu
-					}
-				] }
-				checkHandler={ e => checkHandler(e, "sauces") }
-			/>
-			<h2>Sides</h2>
-			<Category
-				order={ order }
-				type={ "checkbox" }
-				category={ "sides" }
-				options={ [
-					{
-						name: "Crab Salad",
-						src: crabSalad
-					},
-					{
-						name: "Seaweed Salad",
-						src: seaweedSalad
-					},
-					{
-						name: "Avocado",
-						src: avocado
-					},
-					{
-						name: "Cucumber",
-						src: cucumber
-					},
-					{
-						name: "Onions",
-						src: onions
-					},
-					{
-						name: "Pickled Ginger",
-						src: pickledGinger
-					},
-					{
-						name: "Wasabi",
-						src: wasabi
-					}
-				] }
-				checkHandler={ e => checkHandler(e, "sides") }
-			/>
-			<h2>Toppings</h2>
-			<Category
-				order={ order }
-				type={ "checkbox" }
-				category={ "toppings" }
-				options={ [
-					{
-						name: "Corn",
-						src: corn
-					},
-					{
-						name: "Dry Seaweed",
-						src: drySeaweed
-					},
-					{
-						name: "Fried Garlic",
-						src: friedGarlic
-					},
-					{
-						name: "Crispy Onion",
-						src: crispyOnion
-					},
-					{
-						name: "Masago",
-						src: masago
-					},
-					{
-						name: "Green Onion",
-						src: greenOnion
-					},
-					{
-						name: "Furikake",
-						src: furikake
-					},
-					{
-						name: "Edamame",
-						src: edamame
-					},
-					{
-						name: "Sesame Seeds",
-						src: sesameSeeds
-					}
-				] }
-				checkHandler={ e => checkHandler(e, "toppings") }
-			/>
-			<Link to="/order/confirm" className="remove-underline">
-				<Button variant="contained" color="primary" size="large">
-					<span>review order</span>
-					<ArrowForwardIcon />
-				</Button>
-			</Link>
-			<Slide direction="down" in={checked} mountOnEnter unmountOnExit>
+			{
+				!checked ?
+				<>
+					<h1 className="create-bowl">
+						Create Your Bowl<br />
+						<span className="block subheader1">Every Bowl Is Made To Order</span>
+					</h1>
+					<h2>Base</h2>
+					<Category
+						order={ order }
+						type={ "radio" }
+						category={ "base" }
+						options={ [
+							{
+								name: "White Rice",
+								src: whiteRice
+							},
+							{
+								name: "Brown Rice",
+								src: brownRice
+							},
+							{
+								name: "Spring Mix Salad",
+								src: salad
+							},
+						] }
+						checkHandler={ baseHandler }
+					/>
+					<h2>
+						Proteins
+						<span className="block subheader2">Choose up to 3 proteins</span>
+					</h2>
+					<Category
+						order={ order }
+						type={ "checkbox" }
+						category={ "proteins" }
+						options={ [
+							{
+								name: "Tuna",
+								src: tuna
+							},
+							{
+								name: "Salmon",
+								src: salmon
+							},
+							{
+								name: "Shrimp",
+								src: shrimp
+							},
+							{
+								name: "Albacore",
+								src: albacore
+							},
+							{
+								name: "Tako",
+								src: tako
+							},
+							{
+								name: "Spicy Tuna",
+								src: spicyTuna
+							},
+							{
+								name: "Scallops",
+								src: scallops
+							},
+							{
+								name: "Tofu",
+								src: tofu
+							}
+						] }
+						checkHandler={ e => checkHandler(e, "proteins")}
+					/>
+					<h2>Sauces</h2>
+					<Category
+						order={ order }
+						type={ "checkbox" }
+						category={ "sauces" }
+						options={ [
+							{
+								name: "House Poke",
+								src: housePoke
+							},
+							{
+								name: "Sriracha Aioli",
+								src: srirachaAioli
+							},
+							{
+								name: "Wasabi Aioli",
+								src: wasabiAioli
+							},
+							{
+								name: "Zesty Ponzu",
+								src: zestyPonzu
+							}
+						] }
+						checkHandler={ e => checkHandler(e, "sauces") }
+					/>
+					<h2>Sides</h2>
+					<Category
+						order={ order }
+						type={ "checkbox" }
+						category={ "sides" }
+						options={ [
+							{
+								name: "Crab Salad",
+								src: crabSalad
+							},
+							{
+								name: "Seaweed Salad",
+								src: seaweedSalad
+							},
+							{
+								name: "Avocado",
+								src: avocado
+							},
+							{
+								name: "Cucumber",
+								src: cucumber
+							},
+							{
+								name: "Onions",
+								src: onions
+							},
+							{
+								name: "Pickled Ginger",
+								src: pickledGinger
+							},
+							{
+								name: "Wasabi",
+								src: wasabi
+							}
+						] }
+						checkHandler={ e => checkHandler(e, "sides") }
+					/>
+					<h2>Toppings</h2>
+					<Category
+						order={ order }
+						type={ "checkbox" }
+						category={ "toppings" }
+						options={ [
+							{
+								name: "Corn",
+								src: corn
+							},
+							{
+								name: "Dry Seaweed",
+								src: drySeaweed
+							},
+							{
+								name: "Fried Garlic",
+								src: friedGarlic
+							},
+							{
+								name: "Crispy Onion",
+								src: crispyOnion
+							},
+							{
+								name: "Masago",
+								src: masago
+							},
+							{
+								name: "Green Onion",
+								src: greenOnion
+							},
+							{
+								name: "Furikake",
+								src: furikake
+							},
+							{
+								name: "Edamame",
+								src: edamame
+							},
+							{
+								name: "Sesame Seeds",
+								src: sesameSeeds
+							}
+						] }
+						checkHandler={ e => checkHandler(e, "toppings") }
+					/>
+					<Button variant="contained" color="primary" size="large" onClick={ slideHandler }>
+						<span>review order</span>
+						<ArrowForwardIcon />
+					</Button>
+					<img src={ logo } alt="Poke Square logo" className="block logo" />
+				</> :
+				""
+			}
+			<Slide direction="left" in={ checked } mountOnEnter unmountOnExit>
 				<Paper elevation={ 24 } className="confirm-order-paper">
 					<h1>Please Confirm Your Order</h1>
 					<OrderSum order={ order } category={ "base" } />
@@ -303,12 +308,10 @@ const Menu = props => {
 					<OrderSum order={ order } category={ "sauces" } />
 					<OrderSum order={ order } category={ "sides" } />
 					<OrderSum order={ order } category={ "toppings" } />
-					<Link to="/order" className="remove-underline">
-						<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }}>
-							<span>edit order</span>
-							<EditIcon />
-						</Button>
-					</Link>
+					<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }} onClick={ slideHandler }>
+						<span>edit order</span>
+						<EditIcon />
+					</Button>
 					<div className="cust-info">
 						<TextField
 							required
@@ -347,11 +350,6 @@ const Menu = props => {
 					</Button>
 				</Paper>
 			</Slide>
-			<FormControlLabel
-				control={<Switch checked={checked} onChange={ slideHandler } />}
-				label="Show"
-			/>
-			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </>
     )
 };
