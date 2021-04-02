@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import Category from '../Components/Category';
-import { Button } from '@material-ui/core';
+import { Button, FormControlLabel, Switch, Slide, Paper } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 // images
@@ -41,6 +41,8 @@ import logo from '../Images/logo.png';
 const Menu = props => {
     const { order, setOrder } = props;
 
+	const [checked, setChecked] = useState(false);
+
 	const baseHandler = e => {
 		setOrder({
 			...order,
@@ -60,6 +62,10 @@ const Menu = props => {
             [category]: newArray
         });
 	}
+
+	const slideHandler = () => {
+		setChecked((prev) => !prev);
+	};
 
     return (
         <>
@@ -245,6 +251,15 @@ const Menu = props => {
 					<ArrowForwardIcon />
 				</Button>
 			</Link>
+			<FormControlLabel
+				control={<Switch checked={checked} onChange={ slideHandler } />}
+				label="Show"
+			/>
+			<Slide direction="up" in={checked} mountOnEnter unmountOnExit>
+				<Paper elevation={24}>
+					<h2>SUP!</h2>
+				</Paper>
+			</Slide>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </>
     )
