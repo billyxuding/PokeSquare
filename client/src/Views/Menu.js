@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import Category from '../Components/Category';
-import { Button, IconButton } from '@material-ui/core';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { Button } from '@material-ui/core';
 
 // images
 import whiteRice from '../Images/bases/white-rice.png';
@@ -241,11 +240,8 @@ const Menu = props => {
 			/>
 			<Link to="/order/confirm" className="remove-underline">
 				<Button variant="contained" color="primary" size="large">
-					Add To Cart
+					Review Order
 				</Button>
-				<IconButton color="primary" aria-label="add to shopping cart">
-					<AddShoppingCartIcon />
-				</IconButton>
 			</Link>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />
         </>

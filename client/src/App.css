@@ -37,12 +37,12 @@
 }
 
 .subheader1 {
-	margin: 20px;
+	margin: 2px;
 	font-size: 14pt;
 }
 
 .subheader2 {
-	margin: 5px;
+	margin: 2px;
 	font-size: 12pt;
 	font-weight: normal;
 }
@@ -119,9 +119,4 @@ tr {
 
 tr:nth-child(even) {
 	background-color: rgb(226, 226, 226);
-}
-
-.required {
-	margin-top: 30px;
-	font-size: 10pt;
 }
