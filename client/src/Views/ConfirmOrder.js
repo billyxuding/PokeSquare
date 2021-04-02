@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 import OrderSum from '../Components/OrderSum';
+import { Paper } from '@material-ui/core';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
 
@@ -42,26 +43,28 @@ const ConfirmOrder = props => {
 
     return (
         <>
-            <h1>Please confirm your order</h1>
-			<OrderSum order={ order } category={ "base" } />
-			<OrderSum order={ order } category={ "proteins" } />
-			<OrderSum order={ order } category={ "sauces" } />
-			<OrderSum order={ order } category={ "sides" } />
-			<OrderSum order={ order } category={ "toppings" } />
-			<Link to="/order"><button className="edit-order">Edit Order</button></Link>
-			<span className="block">Special Requests:</span>
-			<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
-			<p>Order Total: $14.95</p>
-			<p className="required">*required</p>
-            <div className="cust-info">
-                <label htmlFor="fname">First Name:</label>
-                <input type="text" name="fname" onChange={ changeHandler } />
-            </div>
-			<div className="cust-info">
-				<label htmlFor="lname">Last Name:</label>
-				<input type="text" name="lname" onChange={ changeHandler } />
-			</div>
-			<button className="checkout" role="link" onClick={ checkoutHandler }>Continue To Checkout</button>
+			<Paper elevation={ 20 } className="confirm-order-paper">
+				<h1>Please confirm your order</h1>
+				<OrderSum order={ order } category={ "base" } />
+				<OrderSum order={ order } category={ "proteins" } />
+				<OrderSum order={ order } category={ "sauces" } />
+				<OrderSum order={ order } category={ "sides" } />
+				<OrderSum order={ order } category={ "toppings" } />
+				<Link to="/order"><button className="edit-order">Edit Order</button></Link>
+				<span className="block">Special Requests:</span>
+				<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
+				<p>Order Total: $14.95</p>
+				<p className="required">*required</p>
+				<div className="cust-info">
+					<label htmlFor="fname">First Name:</label>
+					<input type="text" name="fname" onChange={ changeHandler } />
+				</div>
+				<div className="cust-info">
+					<label htmlFor="lname">Last Name:</label>
+					<input type="text" name="lname" onChange={ changeHandler } />
+				</div>
+				<button className="checkout" role="link" onClick={ checkoutHandler }>Continue To Checkout</button>
+			</Paper>
         </>
     )
 };

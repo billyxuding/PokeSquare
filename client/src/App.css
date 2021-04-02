@@ -7,6 +7,13 @@
 	justify-content: center;
 }
 
+.confirm-order-paper {
+	max-width: 600px;
+	min-width: 375px;
+	margin: auto;
+	padding: 20px;
+}
+
 .option {
 	margin: 15px;
 }
