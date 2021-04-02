@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useAuth0 } from "@auth0/auth0-react";
 
 // components
 import Category from '../Components/Category';
@@ -9,6 +10,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Home from './Home';
 import Logout from '../Components/Logout';
 
 // images
@@ -51,6 +53,8 @@ import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj');
 
 const Menu = props => {
+	const { isAuthenticated, isLoading } = useAuth0();
+
     const { order, setOrder } = props;
 
 	const [step, setStep] = useState(1);
@@ -105,245 +109,255 @@ const Menu = props => {
 		}
 	};
 
+	if (isLoading) {
+		return <h1>Loading ...</h1>;
+	}
+
     return (
         <>
-			<Slide direction="right" in={ step === 1 } mountOnEnter unmountOnExit>
-				<Paper elevation={ 10 } className="menu-paper">
-					<h1 className="create-bowl">
-						Create Your Poke Bowl<br />
-						<span className="block subheader1">Every Bowl Is Made To Order</span>
-					</h1>
-					<h2>Base</h2>
-					<Category
-						order={ order }
-						type={ "radio" }
-						category={ "base" }
-						options={ [
-							{
-								name: "White Rice",
-								src: whiteRice
-							},
-							{
-								name: "Brown Rice",
-								src: brownRice
-							},
-							{
-								name: "Spring Mix Salad",
-								src: salad
-							},
-						] }
-						checkHandler={ baseHandler }
-					/>
-					<h2>
-						Proteins
-						<span className="block subheader2">Choose up to 3 proteins</span>
-					</h2>
-					<Category
-						order={ order }
-						type={ "checkbox" }
-						category={ "proteins" }
-						options={ [
-							{
-								name: "Tuna",
-								src: tuna
-							},
-							{
-								name: "Salmon",
-								src: salmon
-							},
-							{
-								name: "Shrimp",
-								src: shrimp
-							},
-							{
-								name: "Albacore",
-								src: albacore
-							},
-							{
-								name: "Tako",
-								src: tako
-							},
-							{
-								name: "Spicy Tuna",
-								src: spicyTuna
-							},
-							{
-								name: "Scallops",
-								src: scallops
-							},
-							{
-								name: "Tofu",
-								src: tofu
-							}
-						] }
-						checkHandler={ e => checkHandler(e, "proteins")}
-					/>
-					<h2>Sauces</h2>
-					<Category
-						order={ order }
-						type={ "checkbox" }
-						category={ "sauces" }
-						options={ [
-							{
-								name: "House Poke",
-								src: housePoke
-							},
-							{
-								name: "Sriracha Aioli",
-								src: srirachaAioli
-							},
-							{
-								name: "Wasabi Aioli",
-								src: wasabiAioli
-							},
-							{
-								name: "Zesty Ponzu",
-								src: zestyPonzu
-							}
-						] }
-						checkHandler={ e => checkHandler(e, "sauces") }
-					/>
-					<h2>Sides</h2>
-					<Category
-						order={ order }
-						type={ "checkbox" }
-						category={ "sides" }
-						options={ [
-							{
-								name: "Crab Salad",
-								src: crabSalad
-							},
-							{
-								name: "Seaweed Salad",
-								src: seaweedSalad
-							},
-							{
-								name: "Avocado",
-								src: avocado
-							},
-							{
-								name: "Cucumber",
-								src: cucumber
-							},
-							{
-								name: "Onions",
-								src: onions
-							},
-							{
-								name: "Pickled Ginger",
-								src: pickledGinger
-							},
-							{
-								name: "Wasabi",
-								src: wasabi
-							}
-						] }
-						checkHandler={ e => checkHandler(e, "sides") }
-					/>
-					<h2>Toppings</h2>
-					<Category
-						order={ order }
-						type={ "checkbox" }
-						category={ "toppings" }
-						options={ [
-							{
-								name: "Corn",
-								src: corn
-							},
-							{
-								name: "Dry Seaweed",
-								src: drySeaweed
-							},
-							{
-								name: "Fried Garlic",
-								src: friedGarlic
-							},
-							{
-								name: "Crispy Onion",
-								src: crispyOnion
-							},
-							{
-								name: "Masago",
-								src: masago
-							},
-							{
-								name: "Green Onion",
-								src: greenOnion
-							},
-							{
-								name: "Furikake",
-								src: furikake
-							},
-							{
-								name: "Edamame",
-								src: edamame
-							},
-							{
-								name: "Sesame Seeds",
-								src: sesameSeeds
-							}
-						] }
-						checkHandler={ e => checkHandler(e, "toppings") }
-					/>
-					<Button variant="contained" color="primary" size="large" onClick={ () => setStep(2) }>
-						<span>review order</span>
-						<ArrowForwardIcon />
-					</Button>
-					<img src={ logo } alt="Poke Square logo" className="block logo" />
-					<Logout />
-				</Paper>
-			</Slide>
-			<Slide direction="right" in={ step === 2 } mountOnEnter unmountOnExit>
-				<Paper elevation={ 24 } className="confirm-order-paper">
-					<h1>Please Confirm Your Order</h1>
-					<OrderSum order={ order } category={ "base" } />
-					<OrderSum order={ order } category={ "proteins" } />
-					<OrderSum order={ order } category={ "sauces" } />
-					<OrderSum order={ order } category={ "sides" } />
-					<OrderSum order={ order } category={ "toppings" } />
-					<Button variant="contained" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
-						<ArrowBackIcon fontSize="small" />
-						<span>edit order</span>
-						<EditIcon fontSize="small" />
-					</Button>
-					<div className="cust-info">
-						<TextField
-							required
-							label="First Name"
-							variant="outlined"
-							size="small"
-							style={{ margin: 8 }}
-							name="fname"
-							onChange={ changeHandler }
-						/>
-						<TextField
-							required
-							label="Last Name"
-							variant="outlined"
-							size="small"
-							style={{ margin: 8 }}
-							name="lname"
-							onChange={ changeHandler }
-						/>
-					</div>
-					<div className="cust-info">
-						<TextField
-							multiline
-							label="Special Requests"
-							variant="outlined"
-							rows={4}
-							style={{ margin: 8 }}
-							name="requests"
-							onChange={ changeHandler }
-						/>
-					</div>
-					<p className="skinny">Order Total: $14.95</p>
-					<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
-						<span>checkout</span>
-						<AddShoppingCartIcon />
-					</Button>
-				</Paper>
-			</Slide>
+			{
+				isAuthenticated ?
+				<div>
+					<Slide direction="right" in={ step === 1 } mountOnEnter unmountOnExit>
+						<Paper elevation={ 10 } className="menu-paper">
+							<h1 className="create-bowl">
+								Create Your Poke Bowl<br />
+								<span className="block subheader1">Every Bowl Is Made To Order</span>
+							</h1>
+							<h2>Base</h2>
+							<Category
+								order={ order }
+								type={ "radio" }
+								category={ "base" }
+								options={ [
+									{
+										name: "White Rice",
+										src: whiteRice
+									},
+									{
+										name: "Brown Rice",
+										src: brownRice
+									},
+									{
+										name: "Spring Mix Salad",
+										src: salad
+									},
+								] }
+								checkHandler={ baseHandler }
+							/>
+							<h2>
+								Proteins
+								<span className="block subheader2">Choose up to 3 proteins</span>
+							</h2>
+							<Category
+								order={ order }
+								type={ "checkbox" }
+								category={ "proteins" }
+								options={ [
+									{
+										name: "Tuna",
+										src: tuna
+									},
+									{
+										name: "Salmon",
+										src: salmon
+									},
+									{
+										name: "Shrimp",
+										src: shrimp
+									},
+									{
+										name: "Albacore",
+										src: albacore
+									},
+									{
+										name: "Tako",
+										src: tako
+									},
+									{
+										name: "Spicy Tuna",
+										src: spicyTuna
+									},
+									{
+										name: "Scallops",
+										src: scallops
+									},
+									{
+										name: "Tofu",
+										src: tofu
+									}
+								] }
+								checkHandler={ e => checkHandler(e, "proteins")}
+							/>
+							<h2>Sauces</h2>
+							<Category
+								order={ order }
+								type={ "checkbox" }
+								category={ "sauces" }
+								options={ [
+									{
+										name: "House Poke",
+										src: housePoke
+									},
+									{
+										name: "Sriracha Aioli",
+										src: srirachaAioli
+									},
+									{
+										name: "Wasabi Aioli",
+										src: wasabiAioli
+									},
+									{
+										name: "Zesty Ponzu",
+										src: zestyPonzu
+									}
+								] }
+								checkHandler={ e => checkHandler(e, "sauces") }
+							/>
+							<h2>Sides</h2>
+							<Category
+								order={ order }
+								type={ "checkbox" }
+								category={ "sides" }
+								options={ [
+									{
+										name: "Crab Salad",
+										src: crabSalad
+									},
+									{
+										name: "Seaweed Salad",
+										src: seaweedSalad
+									},
+									{
+										name: "Avocado",
+										src: avocado
+									},
+									{
+										name: "Cucumber",
+										src: cucumber
+									},
+									{
+										name: "Onions",
+										src: onions
+									},
+									{
+										name: "Pickled Ginger",
+										src: pickledGinger
+									},
+									{
+										name: "Wasabi",
+										src: wasabi
+									}
+								] }
+								checkHandler={ e => checkHandler(e, "sides") }
+							/>
+							<h2>Toppings</h2>
+							<Category
+								order={ order }
+								type={ "checkbox" }
+								category={ "toppings" }
+								options={ [
+									{
+										name: "Corn",
+										src: corn
+									},
+									{
+										name: "Dry Seaweed",
+										src: drySeaweed
+									},
+									{
+										name: "Fried Garlic",
+										src: friedGarlic
+									},
+									{
+										name: "Crispy Onion",
+										src: crispyOnion
+									},
+									{
+										name: "Masago",
+										src: masago
+									},
+									{
+										name: "Green Onion",
+										src: greenOnion
+									},
+									{
+										name: "Furikake",
+										src: furikake
+									},
+									{
+										name: "Edamame",
+										src: edamame
+									},
+									{
+										name: "Sesame Seeds",
+										src: sesameSeeds
+									}
+								] }
+								checkHandler={ e => checkHandler(e, "toppings") }
+							/>
+							<Button variant="contained" color="primary" size="large" onClick={ () => setStep(2) }>
+								<span>review order</span>
+								<ArrowForwardIcon />
+							</Button>
+							<img src={ logo } alt="Poke Square logo" className="block logo" />
+							<Logout />
+						</Paper>
+					</Slide>
+					<Slide direction="right" in={ step === 2 } mountOnEnter unmountOnExit>
+						<Paper elevation={ 24 } className="confirm-order-paper">
+							<h1>Please Confirm Your Order</h1>
+							<OrderSum order={ order } category={ "base" } />
+							<OrderSum order={ order } category={ "proteins" } />
+							<OrderSum order={ order } category={ "sauces" } />
+							<OrderSum order={ order } category={ "sides" } />
+							<OrderSum order={ order } category={ "toppings" } />
+							<Button variant="contained" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
+								<ArrowBackIcon fontSize="small" />
+								<span>edit order</span>
+								<EditIcon fontSize="small" />
+							</Button>
+							<div className="cust-info">
+								<TextField
+									required
+									label="First Name"
+									variant="outlined"
+									size="small"
+									style={{ margin: 8 }}
+									name="fname"
+									onChange={ changeHandler }
+								/>
+								<TextField
+									required
+									label="Last Name"
+									variant="outlined"
+									size="small"
+									style={{ margin: 8 }}
+									name="lname"
+									onChange={ changeHandler }
+								/>
+							</div>
+							<div className="cust-info">
+								<TextField
+									multiline
+									label="Special Requests"
+									variant="outlined"
+									rows={4}
+									style={{ margin: 8 }}
+									name="requests"
+									onChange={ changeHandler }
+								/>
+							</div>
+							<p className="skinny">Order Total: $14.95</p>
+							<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
+								<span>checkout</span>
+								<AddShoppingCartIcon />
+							</Button>
+						</Paper>
+					</Slide>
+				</div> :
+				<Home />
+			}
         </>
     )
 };
