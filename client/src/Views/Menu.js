@@ -108,7 +108,7 @@ const Menu = props => {
 			<Slide direction="right" in={ step === 1 } mountOnEnter unmountOnExit>
 				<Paper elevation={ 10 } className="menu-paper">
 					<h1 className="create-bowl">
-						Create Your Bowl<br />
+						Create Your Poke Bowl<br />
 						<span className="block subheader1">Every Bowl Is Made To Order</span>
 					</h1>
 					<h2>Base</h2>
@@ -298,7 +298,7 @@ const Menu = props => {
 					<OrderSum order={ order } category={ "sauces" } />
 					<OrderSum order={ order } category={ "sides" } />
 					<OrderSum order={ order } category={ "toppings" } />
-					<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
+					<Button variant="contained" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
 						<span>edit order</span>
 						<EditIcon />
 					</Button>
