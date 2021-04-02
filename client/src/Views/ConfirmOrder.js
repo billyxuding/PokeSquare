@@ -57,17 +57,18 @@ const ConfirmOrder = props => {
 				</Link>
 				<span className="block">Special Requests:</span>
 				<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
-				<p>Order Total: $14.95</p>
-				<p className="required">*required</p>
 				<div className="cust-info">
-					<label htmlFor="fname">First Name:</label>
+					<label htmlFor="fname"><span className="red">*</span>First Name:</label>
 					<input type="text" name="fname" onChange={ changeHandler } />
 				</div>
 				<div className="cust-info">
-					<label htmlFor="lname">Last Name:</label>
+					<label htmlFor="lname"><span className="red">*</span>Last Name:</label>
 					<input type="text" name="lname" onChange={ changeHandler } />
 				</div>
-				<button className="checkout" role="link" onClick={ checkoutHandler }>Continue To Checkout</button>
+				<p>Order Total: $14.95</p>
+				<Button variant="contained" color="primary" role="link" onClick={ checkoutHandler }>
+					Continue To Checkout
+				</Button>
 			</Paper>
         </>
     )

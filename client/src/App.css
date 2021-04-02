@@ -20,6 +20,10 @@
 	margin: 15px;
 }
 
+.red {
+	color: red;
+}
+
 .block {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -61,12 +65,6 @@
 	display: none;
 }
 
-.checkout{
-	margin: 50px;
-	width: 200px;
-	height: 80px;
-}
-
 .edit-order {
 	text-decoration: none;
 }
@@ -79,7 +77,7 @@
 
 .cust-info, .order-sum {
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
@@ -123,6 +121,6 @@ tr:nth-child(even) {
 }
 
 .required {
-	margin-top: 50px;
+	margin-top: 30px;
 	font-size: 10pt;
 }
