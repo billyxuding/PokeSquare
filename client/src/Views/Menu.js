@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router';
 import Category from '../Components/Category';
 import { Button } from '@material-ui/core';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 // images
 import whiteRice from '../Images/bases/white-rice.png';
@@ -240,7 +241,8 @@ const Menu = props => {
 			/>
 			<Link to="/order/confirm" className="remove-underline">
 				<Button variant="contained" color="primary" size="large">
-					Review Order
+					<span>review order</span>
+					<ArrowForwardIcon />
 				</Button>
 			</Link>
 			<img src={ logo } alt="Poke Square logo" className="block logo" />

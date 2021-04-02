@@ -54,7 +54,7 @@ const ConfirmOrder = props => {
 				<OrderSum order={ order } category={ "toppings" } />
 				<Link to="/order" className="remove-underline">
 					<Button variant="outlined" color="secondary" size="small">
-						<span>edit Order</span>
+						<span>edit order</span>
 						<EditIcon />
 					</Button>
 				</Link>

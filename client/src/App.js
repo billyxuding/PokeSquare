@@ -6,6 +6,8 @@ import ConfirmOrder from './Views/ConfirmOrder';
 import Success from './Views/Success';
 import Cancel from './Views/Cancel';
 import Admin from './Views/Admin';
+import { Button } from '@material-ui/core';
+import BugReportIcon from '@material-ui/icons/BugReport';
 
 function App() {
 	const [order, setOrder] = useState({
@@ -29,6 +31,10 @@ function App() {
 				<Admin path="/admin/all" type="all" />
 				<Admin path="/admin/pending" type="pending" />
 			</Router>
+			<Button variant="contained" color="secondary" size="small">
+				<span>report bug</span>
+				<BugReportIcon />
+			</Button>
 		</>
 	);
 }
