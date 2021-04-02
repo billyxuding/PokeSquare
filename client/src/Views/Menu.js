@@ -6,6 +6,7 @@ import Category from '../Components/Category';
 import OrderSum from '../Components/OrderSum';
 import { Slide, Paper, Button, TextField } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
@@ -299,8 +300,9 @@ const Menu = props => {
 					<OrderSum order={ order } category={ "sides" } />
 					<OrderSum order={ order } category={ "toppings" } />
 					<Button variant="contained" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
+						<ArrowBackIcon fontSize="small" />
 						<span>edit order</span>
-						<EditIcon />
+						<EditIcon fontSize="small" />
 					</Button>
 					<div className="cust-info">
 						<TextField

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import List from '../Components/List';
+import DoneIcon from '@material-ui/icons/Done';
+import Done from '@material-ui/icons/Done';
 
 const Admin = props => {
 	const [orderList, setOrderList] = useState([]);
@@ -60,8 +62,8 @@ const Admin = props => {
                             <td><List order={ order } category={ "toppings" } /></td>
                             <td>{ order.requests }</td>
 							{
-								order.pickedUp === false ?
-								<td><button onClick={ () => pickedUp(order) }>Picked Up</button></td> :
+								!order.pickedUp ?
+								<td><DoneIcon onClick={ () => pickedUp(order) } /></td> :
 								<td></td>
 							}
                         </tr>
