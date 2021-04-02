@@ -102,9 +102,6 @@ h3 {
 		font-size: 14pt;
 		font-weight: 500;
 	}
-	/* .order-sum ul {
-		text-align: right;
-	} */
 
 ul {
 	margin: 0;
@@ -113,28 +110,16 @@ ul {
 	text-align: right;
 }
 
-span, li, th, td {
+span, li {
 	padding: 5px;
 }
 
-textarea {
-	resize: none;
-}
-
-table {
-	margin: auto;
+.admin-view {
+	width: 500px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 10px;
-	border: 1px solid black;
-	border-radius: 15px;
-	border-spacing: 0;
-}
-
-tr {
-	vertical-align: top;
-}
-
-tr:nth-child(even) {
-	background-color: rgb(226, 226, 226);
 }
 
 .logo {

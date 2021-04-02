@@ -23,8 +23,7 @@ function App() {
 			<Menu path="/order" order={ order } setOrder={ setOrder } />
 			<Success path="/success" />
 			<Cancel path="/cancel" />
-			<Admin path="/admin/all" type="all" />
-			<Admin path="/admin/pending" type="pending" />
+			<Admin path="/admin/:route" />
 		</Router>
 	);
 }

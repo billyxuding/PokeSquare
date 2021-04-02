@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import List from '../Components/List';
+import { Paper, Card } from '@material-ui/core';
+import OrderSum from '../Components/OrderSum';
 import DoneIcon from '@material-ui/icons/Done';
 
 const Admin = props => {
 	const [orderList, setOrderList] = useState([]);
-    const { type } = props;
+    const { route } = props;
 
 	useEffect(() => {
         let mounted = true;
-        axios.get(`http://localhost:8000/api/get/${type}`)
+        axios.get(`http://localhost:8000/api/get/${route}`)
             .then(res => {
                 if (mounted) {
                     setOrderList(res.data.results);
@@ -18,7 +19,7 @@ const Admin = props => {
             })
             .catch(err => console.log(err));
         return () => mounted = false;
-    }, [type]);
+    }, [route]);
 
     const pickedUp = thisOrder => {
 		thisOrder.pickedUp = true;
@@ -31,45 +32,42 @@ const Admin = props => {
     return (
         <>
             {
-                type === "all" ?
+                route === "all" ?
                 <h1>Order History</h1> :
                 <h1>Pending Orders</h1>
             }
-            <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Base</th>
-                        <th>Proteins</th>
-                        <th>Sauces</th>
-                        <th>Sides</th>
-                        <th>Toppings</th>
-                        <th>Special Requests</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                    orderList.slice(0).reverse().map((order, i) => 
-                        <tr key={i}>
-                            <td>{ order.fname }</td>
-                            <td>{ order.lname }</td>
-                            <td>{ order.base }</td>
-                            <td><List order={ order } category={ "proteins" } /></td>
-                            <td><List order={ order } category={ "sauces" } /></td>
-                            <td><List order={ order } category={ "sides" } /></td>
-                            <td><List order={ order } category={ "toppings" } /></td>
-                            <td>{ order.requests }</td>
-							{
-								!order.pickedUp ?
-								<td><DoneIcon onClick={ () => pickedUp(order) } /></td> :
-								<td></td>
-							}
-                        </tr>
-                    )
-                }
-                </tbody>
-            </table>
+            {
+                orderList.slice(0).reverse().map((order, i) =>
+                    <Paper key={i} elevation={ 2 } className="admin-view">
+                        <Card variant="outlined" className="order-sum">
+                            <span>First Name</span>
+                            <span>{ order.fname }</span>
+                        </Card>
+                        <Card variant="outlined" className="order-sum">
+                            <span>Last Name</span>
+                            <span>{ order.lname }</span>
+                        </Card>
+                        <OrderSum order={ order } category="base" />
+                        <OrderSum order={ order } category="proteins" />
+                        <OrderSum order={ order } category="sauces" />
+                        <OrderSum order={ order } category="sides" />
+                        <OrderSum order={ order } category="toppings" />
+                        <Card variant="outlined" className="order-sum">
+                            <span>Requests</span>
+                            {
+                                order.requests ?
+                                <span>{ order.requests }</span> :
+                                <span>None</span>
+                            }
+                        </Card>
+                        {
+                            !order.pickedUp ?
+                            <DoneIcon onClick={ () => pickedUp(order) } /> :
+                            ""
+                        }
+                    </Paper>
+                )
+            }
         </>
     )
 };
