@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import List from '../Components/List';
 
 const Admin = props => {
 	const [orderList, setOrderList] = useState([]);
@@ -53,42 +54,10 @@ const Admin = props => {
                             <td>{ order.fname }</td>
                             <td>{ order.lname }</td>
                             <td>{ order.base }</td>
-                            <td>
-								<ul>
-									{
-										order.proteins.map((protein, i) =>
-											<li key={i}>{ protein }</li>
-										)
-									}
-								</ul>
-							</td>
-                            <td>
-								<ul>
-									{
-										order.sauces.map((sauce, i) =>
-											<li key={i}>{ sauce }</li>
-										)
-									}
-								</ul>
-							</td>
-                            <td>
-								<ul>
-									{
-										order.sides.map((side, i) =>
-											<li key={i}>{ side }</li>
-										)
-									}
-								</ul>
-							</td>
-                            <td>
-								<ul>
-									{
-										order.toppings.map((topping, i) =>
-											<li key={i}>{ topping }</li>
-										)
-									}
-								</ul>
-							</td>
+                            <td><List order={ order } category={ "proteins" } /></td>
+                            <td><List order={ order } category={ "sauces" } /></td>
+                            <td><List order={ order } category={ "sides" } /></td>
+                            <td><List order={ order } category={ "toppings" } /></td>
                             <td>{ order.requests }</td>
 							{
 								order.pickedUp === false ?
