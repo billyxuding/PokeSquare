@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import List from '../Components/List';
 import DoneIcon from '@material-ui/icons/Done';
-import Done from '@material-ui/icons/Done';
 
 const Admin = props => {
 	const [orderList, setOrderList] = useState([]);
