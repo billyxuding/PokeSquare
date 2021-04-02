@@ -53,28 +53,18 @@ const ConfirmOrder = props => {
 				<OrderSum order={ order } category={ "sides" } />
 				<OrderSum order={ order } category={ "toppings" } />
 				<Link to="/order" className="remove-underline">
-					<Button variant="outlined" color="secondary" size="small">
+					<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }}>
 						<span>edit order</span>
 						<EditIcon />
 					</Button>
 				</Link>
-				<span className="block">Special Requests:</span>
-				<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>
-				{/* <div className="cust-info">
-					<label htmlFor="fname"><span className="red">*</span>First Name:</label>
-					<input type="text" name="fname" onChange={ changeHandler } />
-				</div>
-				<div className="cust-info">
-					<label htmlFor="lname"><span className="red">*</span>Last Name:</label>
-					<input type="text" name="lname" onChange={ changeHandler } />
-				</div> */}
 				<div className="cust-info">
 					<TextField
 						required
 						label="First Name"
 						variant="outlined"
 						size="small"
-						style={{ margin: 5 }}
+						style={{ margin: 8 }}
 						name="fname"
 						onChange={ changeHandler }
 					/>
@@ -83,12 +73,23 @@ const ConfirmOrder = props => {
 						label="Last Name"
 						variant="outlined"
 						size="small"
-						style={{ margin: 5 }}
+						style={{ margin: 8 }}
 						name="lname"
 						onChange={ changeHandler }
 					/>
 				</div>
-				<p>Order Total: $14.95</p>
+				<div className="cust-info">
+					<TextField
+						multiline
+						label="Special Requests"
+						variant="outlined"
+						rows={4}
+						style={{ margin: 8 }}
+						name="requests"
+						onChange={ changeHandler }
+					/>
+				</div>
+				<p className="skinny">Order Total: $14.95</p>
 				<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
 					<span>checkout</span>
 					<AddShoppingCartIcon />

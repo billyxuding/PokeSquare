@@ -24,6 +24,10 @@
 	color: red;
 }
 
+.skinny {
+	font-weight: 180;
+}
+
 .block {
 	margin-top: 10px;
 	margin-bottom: 10px;
