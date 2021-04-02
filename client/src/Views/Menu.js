@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 import Category from '../Components/Category';
-import { IconButton } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 // images
@@ -240,8 +240,10 @@ const Menu = props => {
 				checkHandler={ e => checkHandler(e, "toppings") }
 			/>
 			<Link to="/order/confirm" className="remove-underline">
+				<Button variant="contained" color="primary" size="large">
+					Add To Cart
+				</Button>
 				<IconButton color="primary" aria-label="add to shopping cart">
-					<span>Add To Cart</span>
 					<AddShoppingCartIcon />
 				</IconButton>
 			</Link>
