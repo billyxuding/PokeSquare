@@ -43,11 +43,11 @@ const ConfirmOrder = props => {
     return (
         <>
             <h1>Please confirm your order</h1>
-			<OrderSum order={ order } header={ "Base:" } category={ "base" } />
-			<OrderSum order={ order } header={ "Proteins:" } category={ "proteins" } />
-			<OrderSum order={ order } header={ "Sauces:" } category={ "sauces" } />
-			<OrderSum order={ order } header={ "Sides:" } category={ "sides" } />
-			<OrderSum order={ order } header={ "Toppings:" } category={ "toppings" } />
+			<OrderSum order={ order } category={ "base" } />
+			<OrderSum order={ order } category={ "proteins" } />
+			<OrderSum order={ order } category={ "sauces" } />
+			<OrderSum order={ order } category={ "sides" } />
+			<OrderSum order={ order } category={ "toppings" } />
 			<Link to="/order"><button className="edit-order">Edit Order</button></Link>
 			<span className="block">Special Requests:</span>
 			<textarea name="requests" cols="30" rows="5" onChange={ changeHandler }></textarea>

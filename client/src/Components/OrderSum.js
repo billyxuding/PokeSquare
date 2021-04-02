@@ -3,7 +3,9 @@ import List from './List';
 
 
 const OrderSum = props => {
-	const { order, header, category } = props;
+	const { order, category } = props;
+
+	const header = `${category.substring(0, 1).toUpperCase()}${category.substring(1)}:`;
 
 	return (
 		<div className="order-sum">
