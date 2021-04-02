@@ -50,7 +50,7 @@ const ConfirmOrder = props => {
 				<OrderSum order={ order } category={ "sauces" } />
 				<OrderSum order={ order } category={ "sides" } />
 				<OrderSum order={ order } category={ "toppings" } />
-				<Link to="/order" className="edit-order">
+				<Link to="/order" className="remove-underline">
 					<Button variant="outlined" color="secondary" size="small">
 						Edit Order
 					</Button>
@@ -66,8 +66,8 @@ const ConfirmOrder = props => {
 					<input type="text" name="lname" onChange={ changeHandler } />
 				</div>
 				<p>Order Total: $14.95</p>
-				<Button variant="contained" color="primary" role="link" onClick={ checkoutHandler }>
-					Continue To Checkout
+				<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
+					Checkout
 				</Button>
 			</Paper>
         </>
