@@ -67,24 +67,20 @@ const Menu = props => {
 			</h1>
             <h2>Base</h2>
 			<Category
+				order={ order }
 				type={ "radio" }
+				category={ "base" }
 				options={ [
 					{
 						name: "White Rice",
-						id: "white-rice",
-						checked: order.base === "White Rice",
 						src: whiteRice
 					},
 					{
 						name: "Brown Rice",
-						id: "brown-rice",
-						checked: order.base === "Brown Rice",
 						src: brownRice
 					},
 					{
 						name: "Spring Mix Salad",
-						id: "salad",
-						checked: order.base === "Spring Mix Salad",
 						src: salad
 					},
 				] }
@@ -95,54 +91,40 @@ const Menu = props => {
 				<span className="block subheader2">Choose up to 3 proteins</span>
 			</h2>
 			<Category
+				order={ order }
 				type={ "checkbox" }
+				category={ "proteins" }
 				options={ [
 					{
 						name: "Tuna",
-						id: "tuna",
-						checked: order.proteins.includes("Tuna"),
 						src: tuna
 					},
 					{
 						name: "Salmon",
-						id: "salmon",
-						checked: order.proteins.includes("Salmon"),
 						src: salmon
 					},
 					{
 						name: "Shrimp",
-						id: "shrimp",
-						checked: order.proteins.includes("Shrimp"),
 						src: shrimp
 					},
 					{
 						name: "Albacore",
-						id: "albacore",
-						checked: order.proteins.includes("Albacore"),
 						src: albacore
 					},
 					{
 						name: "Tako",
-						id: "tako",
-						checked: order.proteins.includes("Tako"),
 						src: tako
 					},
 					{
 						name: "Spicy Tuna",
-						id: "spicy-tuna",
-						checked: order.proteins.includes("Spicy Tuna"),
 						src: spicyTuna
 					},
 					{
 						name: "Scallops",
-						id: "scallops",
-						checked: order.proteins.includes("Scallops"),
 						src: scallops
 					},
 					{
 						name: "Tofu",
-						id: "tofu",
-						checked: order.proteins.includes("Tofu"),
 						src: tofu
 					}
 				] }
@@ -150,30 +132,24 @@ const Menu = props => {
 			/>
 			<h2>Sauces</h2>
 			<Category
+				order={ order }
 				type={ "checkbox" }
+				category={ "sauces" }
 				options={ [
 					{
 						name: "House Poke",
-						id: "house-poke",
-						checked: order.sauces.includes("House Poke"),
 						src: housePoke
 					},
 					{
 						name: "Sriracha Aioli",
-						id: "sriracha",
-						checked: order.sauces.includes("Sriracha Aioli"),
 						src: srirachaAioli
 					},
 					{
 						name: "Wasabi Aioli",
-						id: "wasabi-aioli",
-						checked: order.sauces.includes("Wasabi Aioli"),
 						src: wasabiAioli
 					},
 					{
 						name: "Zesty Ponzu",
-						id: "zesty-ponzu",
-						checked: order.sauces.includes("Zesty Ponzu"),
 						src: zestyPonzu
 					}
 				] }
@@ -181,48 +157,36 @@ const Menu = props => {
 			/>
 			<h2>Sides</h2>
 			<Category
+				order={ order }
 				type={ "checkbox" }
+				category={ "sides" }
 				options={ [
 					{
 						name: "Crab Salad",
-						id: "crab-salad",
-						checked: order.sides.includes("Crab Salad"),
 						src: crabSalad
 					},
 					{
 						name: "Seaweed Salad",
-						id: "seaweed-salad",
-						checked: order.sides.includes("Seaweed Salad"),
 						src: seaweedSalad
 					},
 					{
 						name: "Avocado",
-						id: "avocado",
-						checked: order.sides.includes("Avocado"),
 						src: avocado
 					},
 					{
 						name: "Cucumber",
-						id: "cucumber",
-						checked: order.sides.includes("Cucumber"),
 						src: cucumber
 					},
 					{
 						name: "Onions",
-						id: "onions",
-						checked: order.sides.includes("Onions"),
 						src: onions
 					},
 					{
 						name: "Pickled Ginger",
-						id: "pickled-ginger",
-						checked: order.sides.includes("Pickled Ginger"),
 						src: pickledGinger
 					},
 					{
 						name: "Wasabi",
-						id: "wasabi",
-						checked: order.sides.includes("Wasabi"),
 						src: wasabi
 					}
 				] }
@@ -230,60 +194,44 @@ const Menu = props => {
 			/>
 			<h2>Toppings</h2>
 			<Category
+				order={ order }
 				type={ "checkbox" }
+				category={ "toppings" }
 				options={ [
 					{
 						name: "Corn",
-						id: "corn",
-						checked: order.toppings.includes("Corn"),
 						src: corn
 					},
 					{
 						name: "Dry Seaweed",
-						id: "dry-seaweed",
-						checked: order.toppings.includes("Dry Seaweed"),
 						src: drySeaweed
 					},
 					{
 						name: "Fried Garlic",
-						id: "fried-garlic",
-						checked: order.toppings.includes("Fried Garlic"),
 						src: friedGarlic
 					},
 					{
 						name: "Crispy Onion",
-						id: "crispy-onion",
-						checked: order.toppings.includes("Crispy Onion"),
 						src: crispyOnion
 					},
 					{
 						name: "Masago",
-						id: "masago",
-						checked: order.toppings.includes("Masago"),
 						src: masago
 					},
 					{
 						name: "Green Onion",
-						id: "green-onion",
-						checked: order.toppings.includes("Green Onion"),
 						src: greenOnion
 					},
 					{
 						name: "Furikake",
-						id: "furikake",
-						checked: order.toppings.includes("Furikake"),
 						src: furikake
 					},
 					{
 						name: "Edamame",
-						id: "edamame",
-						checked: order.toppings.includes("Edamame"),
 						src: edamame
 					},
 					{
 						name: "Sesame Seeds",
-						id: "sesame-seeds",
-						checked: order.toppings.includes("Sesame Seeds"),
 						src: sesameSeeds
 					}
 				] }
