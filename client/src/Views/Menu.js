@@ -9,6 +9,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import EditIcon from '@material-ui/icons/Edit';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Logout from '../Components/Logout';
 
 // images
 import whiteRice from '../Images/bases/white-rice.png';
@@ -289,6 +290,7 @@ const Menu = props => {
 						<ArrowForwardIcon />
 					</Button>
 					<img src={ logo } alt="Poke Square logo" className="block logo" />
+					<Logout />
 				</Paper>
 			</Slide>
 			<Slide direction="right" in={ step === 2 } mountOnEnter unmountOnExit>
