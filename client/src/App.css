@@ -69,12 +69,6 @@
 	text-decoration: none;
 }
 
-.logo {
-	margin-top: 50px;
-	margin-bottom: 50px;
-	width: 500px;
-	height: 300px;
-}
 
 .cust-info, .order-sum {
 	margin-top: 10px;
@@ -101,6 +95,7 @@ span, li, th, td {
 	padding: 5px;
 }
 
+
 textarea {
 	resize: none;
 }
@@ -119,4 +114,11 @@ tr {
 
 tr:nth-child(even) {
 	background-color: rgb(226, 226, 226);
+}
+
+.logo {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 500px;
+	height: 300px;
 }

@@ -4,6 +4,8 @@ import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
 import OrderSum from '../Components/OrderSum';
 import { Paper, Button } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
 
@@ -52,7 +54,8 @@ const ConfirmOrder = props => {
 				<OrderSum order={ order } category={ "toppings" } />
 				<Link to="/order" className="remove-underline">
 					<Button variant="outlined" color="secondary" size="small">
-						Edit Order
+						<span>edit Order</span>
+						<EditIcon />
 					</Button>
 				</Link>
 				<span className="block">Special Requests:</span>
@@ -67,7 +70,8 @@ const ConfirmOrder = props => {
 				</div>
 				<p>Order Total: $14.95</p>
 				<Button variant="contained" color="primary" size="large" role="link" onClick={ checkoutHandler }>
-					Checkout
+					<span>checkout</span>
+					<AddShoppingCartIcon />
 				</Button>
 			</Paper>
         </>
