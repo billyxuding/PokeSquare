@@ -46,16 +46,16 @@ const Menu = props => {
 		})
 	}
 
-	const checkHandler = (e, type) => {
-		let newSauces;
+	const checkHandler = (e, category) => {
+		let newArray;
         if (e.target.checked) {
-            newSauces = [...order[type], e.target.name];
+            newArray = [...order[category], e.target.name];
         } else {
-            newSauces = order[type].filter((item) => item !== e.target.name);
+            newArray = order[category].filter((item) => item !== e.target.name);
         }
         setOrder({
             ...order,
-            [type]: newSauces
+            [category]: newArray
         });
 	}
 
