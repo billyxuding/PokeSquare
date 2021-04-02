@@ -46,7 +46,7 @@ const ConfirmOrder = props => {
     return (
         <>
 			<Paper elevation={ 24 } className="confirm-order-paper">
-				<h1>Please confirm your order</h1>
+				<h1>Please Confirm Your Order</h1>
 				<OrderSum order={ order } category={ "base" } />
 				<OrderSum order={ order } category={ "proteins" } />
 				<OrderSum order={ order } category={ "sauces" } />
