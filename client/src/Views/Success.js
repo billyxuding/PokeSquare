@@ -10,7 +10,7 @@ const Success = () => {
             <iframe
                 title="Poke Square location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.5051970231693!2d-122.32795098424347!3d47.63574879395685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490150600ae3361%3A0x5d49fb8382bab02f!2sPoke%20Square!5e0!3m2!1sen!2sus!4v1617382419617!5m2!1sen!2sus"
-                allowfullscreen="" loading="lazy">
+                allowFullScreen="" loading="lazy">
             </iframe>
         </>
     )
