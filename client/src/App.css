@@ -102,14 +102,15 @@ h3 {
 		font-size: 14pt;
 		font-weight: 500;
 	}
-	.order-sum ul {
+	/* .order-sum ul {
 		text-align: right;
-	}
+	} */
 
 ul {
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
+	text-align: right;
 }
 
 span, li, th, td {
