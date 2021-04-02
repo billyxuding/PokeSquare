@@ -146,6 +146,8 @@ tr:nth-child(even) {
 
 iframe {
 	border: 0;
+	width: 600px;
+	height: 450px;
 }
 
 .success-page-message {
