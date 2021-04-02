@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from '@reach/router';
 
 // components
 import Category from '../Components/Category';
@@ -54,22 +53,7 @@ const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR
 const Menu = props => {
     const { order, setOrder } = props;
 
-	// const [slide, setSlide] = useState(false);
 	const [step, setStep] = useState(1);
-	
-	// const slideHandler = () => {
-	// 	setSlide((prev) => !prev);
-	// };
-
-	// const nextHandler = () => {
-	// 	setStep(2);
-	// 	setSlide(true);
-	// }
-
-	// const prevHandler = () => {
-	// 	setStep(1);
-	// 	setSlide(true);
-	// };
 
 	const baseHandler = e => {
 		setOrder({
@@ -115,17 +99,16 @@ const Menu = props => {
 			sessionId: session.id,
 		});
 
+		// If redirectToCheckout fails due to a browser or network error
 		if (result.error) {
-		  // If `redirectToCheckout` fails due to a browser or network
-		  // error, display the localized error message to your customer
-		  // using `result.error.message`.
+			// display the localized error message to customer using result.error.message.
 		}
 	};
 
     return (
         <>
 			<Slide direction="right" in={ step === 1 } mountOnEnter unmountOnExit>
-				<Paper elevation={ 6 } className="menu-paper">
+				<Paper elevation={ 10 } className="menu-paper">
 					<h1 className="create-bowl">
 						Create Your Bowl<br />
 						<span className="block subheader1">Every Bowl Is Made To Order</span>
