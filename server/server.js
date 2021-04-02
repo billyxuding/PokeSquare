@@ -11,7 +11,8 @@ app.use(cors());
 
 require("./routes/routes")(app);
 
-const stripe = require('stripe')('sk_test_51IbJ6LBx7QZ9wBYOhCX4nGGjWZ8nPIWjftxC7qYgMgcZMiKifAiHjo7WxwusCEDGJNkxd3ojwyFPT8g43RB0iyEP00UVq3IPJp'); // secret test key linked to Stripe account
+// secret test key linked to Stripe account
+const stripe = require('stripe')('sk_test_51IbJ6LBx7QZ9wBYOhCX4nGGjWZ8nPIWjftxC7qYgMgcZMiKifAiHjo7WxwusCEDGJNkxd3ojwyFPT8g43RB0iyEP00UVq3IPJp');
 
 app.post('/create-checkout-session', async (req, res) => {
 	const session = await stripe.checkout.sessions.create({
