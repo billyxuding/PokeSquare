@@ -143,3 +143,14 @@ tr:nth-child(even) {
 	width: 500px;
 	height: 300px;
 }
+
+iframe {
+	border: 0;
+}
+
+.success-page-message {
+	display: block;
+	width: 200px;
+	height: 200px;
+	margin: auto;
+}
