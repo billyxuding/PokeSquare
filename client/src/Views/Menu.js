@@ -4,8 +4,6 @@ import axios from 'axios';
 // components
 import Category from '../Components/Category';
 import OrderSum from '../Components/OrderSum';
-
-// material-ui
 import { Button, Slide, Paper, TextField } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import EditIcon from '@material-ui/icons/Edit';
