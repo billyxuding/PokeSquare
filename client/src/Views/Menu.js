@@ -54,7 +54,22 @@ const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR
 const Menu = props => {
     const { order, setOrder } = props;
 
-	const [checked, setChecked] = useState(false);
+	// const [slide, setSlide] = useState(false);
+	const [step, setStep] = useState(1);
+	
+	// const slideHandler = () => {
+	// 	setSlide((prev) => !prev);
+	// };
+
+	// const nextHandler = () => {
+	// 	setStep(2);
+	// 	setSlide(true);
+	// }
+
+	// const prevHandler = () => {
+	// 	setStep(1);
+	// 	setSlide(true);
+	// };
 
 	const baseHandler = e => {
 		setOrder({
@@ -75,10 +90,6 @@ const Menu = props => {
             [category]: newArray
         });
 	}
-
-	const slideHandler = () => {
-		setChecked((prev) => !prev);
-	};
 
 	const changeHandler = e => {
 		setOrder({
@@ -113,9 +124,8 @@ const Menu = props => {
 
     return (
         <>
-			{
-				!checked ?
-				<>
+			<Slide direction="right" in={ step === 1 } mountOnEnter unmountOnExit>
+				<Paper elevation={ 6 } className="menu-paper">
 					<h1 className="create-bowl">
 						Create Your Bowl<br />
 						<span className="block subheader1">Every Bowl Is Made To Order</span>
@@ -292,15 +302,14 @@ const Menu = props => {
 						] }
 						checkHandler={ e => checkHandler(e, "toppings") }
 					/>
-					<Button variant="contained" color="primary" size="large" onClick={ slideHandler }>
+					<Button variant="contained" color="primary" size="large" onClick={ () => setStep(2) }>
 						<span>review order</span>
 						<ArrowForwardIcon />
 					</Button>
 					<img src={ logo } alt="Poke Square logo" className="block logo" />
-				</> :
-				""
-			}
-			<Slide direction="left" in={ checked } mountOnEnter unmountOnExit>
+				</Paper>
+			</Slide>
+			<Slide direction="right" in={ step === 2 } mountOnEnter unmountOnExit>
 				<Paper elevation={ 24 } className="confirm-order-paper">
 					<h1>Please Confirm Your Order</h1>
 					<OrderSum order={ order } category={ "base" } />
@@ -308,7 +317,7 @@ const Menu = props => {
 					<OrderSum order={ order } category={ "sauces" } />
 					<OrderSum order={ order } category={ "sides" } />
 					<OrderSum order={ order } category={ "toppings" } />
-					<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }} onClick={ slideHandler }>
+					<Button variant="outlined" color="secondary" size="small" style={{ margin: 8 }} onClick={ () => setStep(1) }>
 						<span>edit order</span>
 						<EditIcon />
 					</Button>

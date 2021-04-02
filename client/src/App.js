@@ -20,16 +20,14 @@ function App() {
 	});
 
 	return (
-		<>
-			<Router>
-				<Menu path="/order" order={ order } setOrder={ setOrder } />
-				<ConfirmOrder path="/order/confirm" order={ order } setOrder={ setOrder } />
-				<Success path="/success" />
-				<Cancel path="/cancel" />
-				<Admin path="/admin/all" type="all" />
-				<Admin path="/admin/pending" type="pending" />
-			</Router>
-		</>
+		<Router>
+			<Menu path="/order" order={ order } setOrder={ setOrder } />
+			<ConfirmOrder path="/order/confirm" order={ order } setOrder={ setOrder } />
+			<Success path="/success" />
+			<Cancel path="/cancel" />
+			<Admin path="/admin/all" type="all" />
+			<Admin path="/admin/pending" type="pending" />
+		</Router>
 	);
 }
 
