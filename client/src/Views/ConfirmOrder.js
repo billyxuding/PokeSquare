@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from '@reach/router';
 import { loadStripe } from '@stripe/stripe-js';
+import List from '../Components/List';
 
 const stripePromise = loadStripe('pk_test_51IbJ6LBx7QZ9wBYORs1GSwYq7yj0ey11eFhuR3Un7KZvgxaOoMznUne1GBwgGP36BiN3otTyTJA4fYNs4727Dqvr00WAbqpvoj'); // public test key linked to Stripe account
 
@@ -54,11 +55,7 @@ const ConfirmOrder = props => {
 				<span>Proteins:</span>
 				{
 					order.proteins.length > 0 ?
-					<ul>
-						{
-							order.proteins.map((item, i) => <li key={i}>{ item }</li>)
-						}
-					</ul> :
+					<List order={ order } category={ "proteins" } /> :
 					<span>None</span>
 				}
 			</div>
@@ -66,11 +63,7 @@ const ConfirmOrder = props => {
 				<span>Sauces:</span>
 				{
 					order.sauces.length > 0 ?
-					<ul>
-						{
-							order.sauces.map((item, i) => <li key={i}>{ item }</li>)
-						}
-					</ul> :
+					<List order={ order } category={ "sauces" } /> :
 					<span>None</span>
 				}
 			</div>
@@ -78,11 +71,7 @@ const ConfirmOrder = props => {
 				<span>Sides:</span>
 				{
 					order.sides.length > 0 ?
-					<ul>
-						{
-							order.sides.map((item, i) => <li key={i}>{ item }</li>)
-						}
-					</ul> :
+					<List order={ order } category={ "sides" } /> :
 					<span>None</span>
 				}
 			</div>
@@ -90,11 +79,7 @@ const ConfirmOrder = props => {
 				<span>Toppings:</span>
 				{
 					order.toppings.length > 0 ?
-					<ul>
-						{
-							order.toppings.map((item, i) => <li key={i}>{ item }</li>)
-						}
-					</ul> :
+					<List order={ order } category={ "toppings" } /> :
 					<span>None</span>
 				}
 			</div>
