@@ -58,7 +58,7 @@
 
 .label img {
 	border-radius: 50%;
-	border: 10px solid white;
+	border: 10px solid aliceblue;
 }
 
 .checkbox:checked + .label img {
