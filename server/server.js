@@ -22,7 +22,7 @@ app.post('/create-checkout-session', async (req, res) => {
 					currency: 'usd',
 					product_data: {
 						name: 'Poke Bowl',
-						images: ['https://media.istockphoto.com/illustrations/poke-bowl-hawaiian-cuisine-food-natural-restaurant-illustration-id1125696704?k=6&m=1125696704&s=170667a&w=0&h=aRxGfVEs8L2ptd2dx2wn6LGwTdEnP7Kjn_qhaLtC0kg='],
+						images: ['https://cdn.vox-cdn.com/thumbor/6wAmqQlDvT7BVEtTxiuh-SFO8oI=/0x0:2000x1333/1200x900/filters:focal(840x506:1160x826)/cdn.vox-cdn.com/uploads/chorus_image/image/63014219/Pratt_45th_Stop_n_Shop_16.0.0.0.jpg'],
 					},
 					unit_amount: 1495,
 				},
