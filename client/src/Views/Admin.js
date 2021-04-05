@@ -5,10 +5,10 @@ import OrderSum from '../Components/OrderSum';
 import DoneIcon from '@material-ui/icons/Done';
 
 const Admin = props => {
-	const [orderList, setOrderList] = useState([]);
+    const [orderList, setOrderList] = useState([]);
     const { route } = props;
 
-	useEffect(() => {
+    useEffect(() => {
         let mounted = true;
         axios.get(`http://localhost:8000/api/get/${route}`)
             .then(res => {
@@ -22,11 +22,11 @@ const Admin = props => {
     }, [route]);
 
     const pickedUp = thisOrder => {
-		thisOrder.pickedUp = true;
-		axios.put(`http://localhost:8000/api/${thisOrder._id}`, thisOrder)
-			.then(res => console.log(res.data))
-			.catch(err => console.log(err));
-		setOrderList(orderList.filter(order => order._id !== thisOrder._id));
+        thisOrder.pickedUp = true;
+        axios.put(`http://localhost:8000/api/${thisOrder._id}`, thisOrder)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
+        setOrderList(orderList.filter(order => order._id !== thisOrder._id));
     }
 
     return (
