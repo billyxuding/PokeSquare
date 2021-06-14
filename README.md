@@ -1,4 +1,4 @@
 # PokeSquare
-A website where users can place orders for pick-up at Poke Square (a local poke restaurant)
+A web app for placing orders at Poke Square (a local poke restaurant)
 
-Built using the MERN stack
+Built with React, Express, Node.js, MongoDB, Stripe, Auth0
